@@ -1,0 +1,285 @@
+.FirstDiv {
+    display: flex;
+    position: relative
+}
+
+.Left-sidebar {
+    width: 165px;
+    background-color: white;
+    padding: 20px;
+    text-align: center;
+    margin-top: 50px;
+    z-index: 1;
+    border-right: 1px solid black
+}
+
+.Settings-header {
+    color: grey;
+    font-size: 12px
+}
+
+.Hr-tag {
+    width: 120px
+}
+
+.Sidebar-headers {
+    color: grey;
+    text-align: left;
+    font-size: 12px
+}
+
+.Sidebar-content {
+    font-size: 12px;
+    text-align: left;
+}
+
+.Navbar {
+    background-color: white;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+    border-bottom: 1px solid black
+}
+
+.Image-1 {
+    height: 30px;
+    float: left
+}
+
+.Back-button {
+    border: none;
+    background: none;
+    padding: 0;
+    cursor: pointer;
+    margin-left: 15px
+}
+
+.Navbar-buttons {
+    width: 40px;
+    height: 33px;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    flex: 1;
+    margin-right: 5px !important
+}
+
+.Vertical-line1 {
+    color: grey;
+    margin-top: 3px;
+    margin-left: 5px
+}
+
+.Vertical-line2 {
+    color: grey;
+    margin-top: 3px
+}
+
+.Ul-style {
+    list-style: none;
+    display: flex;
+    gap: 20px
+}
+
+.Button-div {
+    display: flex;
+    margin-top: 16px
+}
+
+.Button-navbar {
+    width: 40px;
+    height: 33px !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    flex: 1;
+    position: 'relative' !important
+}
+
+.Orange-dot {
+    position: absolute !important;
+    top: -5px !important;
+    right: -5px !important;
+    width: 10px !important;
+    height: 10px !important;
+    background-color: orange !important;
+    border-radius: 50% !important;
+    border: 2px solid white !important
+}
+
+.Call-button {
+    width: 40px;
+    height: 33px;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    flex: 1;
+    margin-right: 5px
+}
+
+.Profile-div {
+    position: relative;
+    display: inline-block
+}
+
+.Profile-image {
+    height: 33px;
+    margin-left: 5px
+}
+
+.Profile-greendot {
+    position: 'absolute';
+    bottom: '0';
+    right: '0';
+    width: '9px';
+    height: '9px';
+    background-color: 'green';
+    border-radius: '50%';
+}
+
+
+.Search-button {
+    background-color: 'white' !important;
+    margin-left: '7px' !important;
+    border-radius: '6px 0 0 6px' !important;
+    height: '30px' !important;
+    display: 'flex' !important;
+    align-items: 'center' !important;
+    justify-content: 'space-between' !important
+}
+
+.Div-background {
+    padding: 20px;
+    background-color: #e3f0f2
+}
+
+
+.Profile-imagecircle {
+    height: 33px;
+    margin-left: 5px
+}
+
+.Green-dot {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 9px;
+    height: 9px;
+    background-color: green;
+    border-radius: 50%;
+}
+
+.Profile-place {
+    position: relative;
+    display: inline-block
+}
+
+.Card-size {
+    width: 230px;
+    margin-left: 0;
+    margin-right: 0;
+    height: 205px;
+    margin: auto
+}
+
+.Card-container{
+    margin-top: 15px;
+    padding-left: 0;
+    padding-right: 0 
+}
+
+
+.Card-section1{
+    margin-left: 13px;
+    font-size: 14px;
+}
+
+
+.Card-text{
+    font-size: 14px;
+}
+
+.Card-icons{
+    height: 20px;
+    float: left
+}
+
+.Card-container2{
+    margin-top: 15px;
+    padding-left: 0;
+    padding-right: 0 
+}
+
+
+.Card-section2{
+    display: flex;
+    justify-content:center;
+    align-items: center 
+}
+
+.Card-style2{
+    width: 230px;
+    height: 205px;
+    margin: auto 
+}
+
+.Card-title2{
+    display: flex;
+    justify-content: center;
+    align-items: center
+}
+
+.Msd-logo{
+    height: 80px
+}
+
+.Card-logos2{
+    height: 70px
+}
+
+.Card-text2{
+    margin-top: 15px; 
+    font-size: 14px;
+    display: flex; 
+    justify-content: center;
+    align-items: center
+}
+
+.Configure-button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 32px;
+    width: 200px
+}
+
+.Div-end{
+    margin-top: 15px;
+    padding-left: 0;
+    padding-right: 0;
+    height: 110px
+}
+
+.Search-placeholder{
+    height: 33px !important;
+    border: 1px solid grey !important;
+    border-radius: 0 6px 6px 0 !important
+}
+
+.Search-icon{
+    position: absolute;
+    right: 5px;
+    top: 6px 
+}
+
+
+.Div-margintop{
+    margin-top: 50px
+}
