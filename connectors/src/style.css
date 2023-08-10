@@ -313,3 +313,15 @@
 .Custom-space{
     margin-left:5px
 }
+
+.icons-alignment{
+    vertical-align:baseline
+}
+
+.text-alignment{
+    vertical-align: bottom;
+}
+
+.toggle-alignment{
+    vertical-align:text-bottom
+}

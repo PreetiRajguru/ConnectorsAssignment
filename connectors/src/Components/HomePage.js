@@ -63,7 +63,7 @@ const HomePage = () => {
           <div>
             <img src={logoImage1} alt="Logo" className='Image-1' />
             <button className='Back-button'>
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-arrow-left" viewBox="0 0 16 16" transform="translate(0, 2)">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-arrow-left icons-alignment" viewBox="0 0 16 16" transform="translate(0, 2)">
                 <path fillRule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z" />
               </svg>
               <text className='Back-label'>Back</text>
@@ -169,10 +169,10 @@ const HomePage = () => {
                     <hr />
                     <div className="form-check form-switch">
                       <input className="form-check-input" type="checkbox" id="toggleButton" checked={isEnabled} onChange={handleToggle} />
-                      <label className="form-check-label" htmlFor="toggleButton">
+                      <label className="form-check-label toggle-alignment" htmlFor="toggleButton">
                         {isEnabled ? 'Enabled' : 'Disabled'} |
                       </label>
-                      <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="green" class="bi bi-link Custom-space" viewBox="0 0 16 16">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="green" class="bi bi-link Custom-space text-alignment" viewBox="0 0 16 16">
                         <path d="M6.354 5.5H4a3 3 0 0 0 0 6h3a3 3 0 0 0 2.83-4H9c-.086 0-.17.01-.25.031A2 2 0 0 1 7 10.5H4a2 2 0 1 1 0-4h1.535c.218-.376.495-.714.82-1z" />
                         <path d="M9 5.5a3 3 0 0 0-2.83 4h1.098A2 2 0 0 1 9 6.5h3a2 2 0 1 1 0 4h-1.535a4.02 4.02 0 0 1-.82 1H12a3 3 0 1 0 0-6H9z" />
                       </svg>
@@ -203,10 +203,10 @@ const HomePage = () => {
                     <hr />
                     <div className="form-check form-switch">
                       <input className="form-check-input" type="checkbox" id="toggleButton" checked={isEnabled} onChange={handleToggle} />
-                      <label className="form-check-label" htmlFor="toggleButton">
+                      <label className="form-check-label toggle-alignment" htmlFor="toggleButton">
                         {isEnabled ? 'Enabled' : 'Disabled'} |
                       </label>
-                      <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="green" class="bi bi-link Custom-space" viewBox="0 0 16 16">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="green" class="bi bi-link Custom-space text-alignment" viewBox="0 0 16 16">
                         <path d="M6.354 5.5H4a3 3 0 0 0 0 6h3a3 3 0 0 0 2.83-4H9c-.086 0-.17.01-.25.031A2 2 0 0 1 7 10.5H4a2 2 0 1 1 0-4h1.535c.218-.376.495-.714.82-1z" />
                         <path d="M9 5.5a3 3 0 0 0-2.83 4h1.098A2 2 0 0 1 9 6.5h3a2 2 0 1 1 0 4h-1.535a4.02 4.02 0 0 1-.82 1H12a3 3 0 1 0 0-6H9z" />
                       </svg>
@@ -237,10 +237,10 @@ const HomePage = () => {
                     <hr />
                     <div className="form-check form-switch">
                       <input className="form-check-input" type="checkbox" id="toggleButton" checked={isEnabled} onChange={handleToggle} />
-                      <label className="form-check-label" htmlFor="toggleButton">
+                      <label className="form-check-label toggle-alignment" htmlFor="toggleButton">
                         {isEnabled ? 'Enabled' : 'Disabled'} |
                       </label>
-                      <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="green" class="bi bi-link Custom-space" viewBox="0 0 16 16">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="green" class="bi bi-link Custom-space text-alignment" viewBox="0 0 16 16">
                         <path d="M6.354 5.5H4a3 3 0 0 0 0 6h3a3 3 0 0 0 2.83-4H9c-.086 0-.17.01-.25.031A2 2 0 0 1 7 10.5H4a2 2 0 1 1 0-4h1.535c.218-.376.495-.714.82-1z" />
                         <path d="M9 5.5a3 3 0 0 0-2.83 4h1.098A2 2 0 0 1 9 6.5h3a2 2 0 1 1 0 4h-1.535a4.02 4.02 0 0 1-.82 1H12a3 3 0 1 0 0-6H9z" />
                       </svg>
@@ -270,10 +270,10 @@ const HomePage = () => {
                     <hr />
                     <div className="form-check form-switch">
                       <input className="form-check-input" type="checkbox" id="toggleButton" checked={isEnabled} onChange={handleToggle} />
-                      <label className="form-check-label" htmlFor="toggleButton">
+                      <label className="form-check-label toggle-alignment" htmlFor="toggleButton">
                         {isEnabled ? 'Enabled' : 'Disabled'} |
                       </label>
-                      <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="green" class="bi bi-link Custom-space" viewBox="0 0 16 16">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="green" class="bi bi-link Custom-space text-alignment" viewBox="0 0 16 16">
                         <path d="M6.354 5.5H4a3 3 0 0 0 0 6h3a3 3 0 0 0 2.83-4H9c-.086 0-.17.01-.25.031A2 2 0 0 1 7 10.5H4a2 2 0 1 1 0-4h1.535c.218-.376.495-.714.82-1z" />
                         <path d="M9 5.5a3 3 0 0 0-2.83 4h1.098A2 2 0 0 1 9 6.5h3a2 2 0 1 1 0 4h-1.535a4.02 4.02 0 0 1-.82 1H12a3 3 0 1 0 0-6H9z" />
                       </svg>
@@ -304,10 +304,10 @@ const HomePage = () => {
                     <hr />
                     <div className="form-check form-switch">
                       <input className="form-check-input" type="checkbox" id="toggleButton" checked={isEnabled} onChange={handleToggle} />
-                      <label className="form-check-label" htmlFor="toggleButton">
+                      <label className="form-check-label toggle-alignment" htmlFor="toggleButton">
                         {isEnabled ? 'Enabled' : 'Disabled'} |
                       </label>
-                      <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="green" class="bi bi-link Custom-space" viewBox="0 0 16 16">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="green" class="bi bi-link Custom-space text-alignment" viewBox="0 0 16 16">
                         <path d="M6.354 5.5H4a3 3 0 0 0 0 6h3a3 3 0 0 0 2.83-4H9c-.086 0-.17.01-.25.031A2 2 0 0 1 7 10.5H4a2 2 0 1 1 0-4h1.535c.218-.376.495-.714.82-1z" />
                         <path d="M9 5.5a3 3 0 0 0-2.83 4h1.098A2 2 0 0 1 9 6.5h3a2 2 0 1 1 0 4h-1.535a4.02 4.02 0 0 1-.82 1H12a3 3 0 1 0 0-6H9z" />
                       </svg>
