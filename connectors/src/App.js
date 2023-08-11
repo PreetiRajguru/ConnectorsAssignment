@@ -6,7 +6,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 // Bootstrap Bundle JS
 import "bootstrap/dist/js/bootstrap.bundle.min";
 import "./style.css";
-import NewConnector from './Components/NewConnector';
+import Configure from './Components/Configure';
 
 
 function App() {
@@ -14,7 +14,7 @@ function App() {
     <Router>
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/newconnector" element={<NewConnector />} />
+        <Route path="/configure" element={<Configure />} />
       </Routes>
     </Router>
   );

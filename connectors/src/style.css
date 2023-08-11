@@ -1,9 +1,9 @@
-.FirstDiv {
+.first-div {
     display: flex;
     position: relative
 }
 
-.Left-sidebar {
+.left-sidebar {
     width: 165px;
     background-color: white;
     padding: 20px;
@@ -13,22 +13,25 @@
     border-right: 1px solid black
 }
 
-.Settings-header {
+.settings-headers {
     color: grey;
-    font-size: 12px
+    font-size: 12px;
+    text-align: left !important;
+    margin-right: 20px !important;
+    width: 10 !important
 }
 
-.Hr-tag {
+.hr-tag {
     width: 120px
 }
 
-.Sidebar-headers {
+.sidebar-headers {
     color: grey;
     text-align: left;
-    font-size: 12px
+    font-size: 12px !important
 }
 
-.Sidebar-content {
+.sidebar-content {
     font-size: 12px;
     text-align: left;
 }
@@ -48,18 +51,18 @@
     border-bottom: 1px solid black
 }
 
-.Image-1 {
+.image-1 {
     height: 30px;
     float: left
 }
 
-.Back-button {
+.back-button {
     border: none;
     background: none;
     padding: 0;
     cursor: pointer;
     /* margin-left: 15px; */
-    margin-left:41px 
+    margin-left: 41px
 }
 
 .Navbar-buttons {
@@ -72,30 +75,30 @@
     margin-right: 5px !important
 }
 
-.Vertical-line1 {
+.vertical-line1 {
     color: grey;
     margin-top: 3px;
     margin-left: 5px
 }
 
-.Vertical-line2 {
+.vertical-line2 {
     color: grey;
     margin-top: 3px;
-    margin-left: 9px !important 
+    margin-left: 9px !important
 }
 
-.Ul-style {
+.ul-style {
     list-style: none;
     display: flex;
     gap: 20px
 }
 
-.Button-div {
+.button-div {
     display: flex;
     margin-top: 16px
 }
 
-.Button-navbar {
+.button-Navbar {
     width: 40px;
     height: 33px !important;
     display: flex !important;
@@ -105,7 +108,7 @@
     position: 'relative' !important
 }
 
-.Orange-dot {
+.orange-dot {
     position: absolute !important;
     top: -5px !important;
     right: -5px !important;
@@ -116,7 +119,7 @@
     border: 2px solid white !important
 }
 
-.Call-button {
+.call-button {
     width: 40px;
     height: 33px;
     display: flex !important;
@@ -124,20 +127,20 @@
     align-items: center !important;
     flex: 1;
     margin-right: 5px;
-    margin-left:7px
+    margin-left: 7px
 }
 
-.Profile-div {
+.profile-div {
     position: relative;
     display: inline-block
 }
 
-.Profile-image {
+.profile-image {
     height: 33px;
     margin-left: 5px
 }
 
-.Profile-greendot {
+.profile-greendot {
     position: 'absolute';
     bottom: '0';
     right: '0';
@@ -148,7 +151,7 @@
 }
 
 
-.Search-button {
+.search-button {
     background-color: 'white' !important;
     margin-left: '7px' !important;
     border-radius: '6px 0 0 6px' !important;
@@ -158,18 +161,18 @@
     justify-content: 'space-between' !important
 }
 
-.Div-background {
+.div-background {
     padding: 20px;
     background-color: #e3f0f2
 }
 
 
-.Profile-imagecircle {
+.profile-imagecircle {
     height: 33px;
     margin-left: 5px
 }
 
-.Green-dot {
+.green-dot {
     position: absolute;
     bottom: 0;
     right: 0;
@@ -179,12 +182,12 @@
     border-radius: 50%;
 }
 
-.Profile-place {
+.profile-place {
     position: relative;
     display: inline-block
 }
 
-.Card-size {
+.card-size {
     width: 230px;
     margin-left: 0;
     margin-right: 0;
@@ -192,136 +195,168 @@
     margin: auto
 }
 
-.Card-container{
+.card-container {
     margin-top: 15px;
     padding-left: 0;
-    padding-right: 0 
+    padding-right: 0
 }
 
 
-.Card-section1{
+.card-section1 {
     margin-left: 13px;
     font-size: 14px;
 }
 
 
-.Card-text{
+.card-text {
     font-size: 14px;
-    margin-left:7px
+    margin-left: 7px
 }
 
-.Card-icons{
+.card-icons {
     height: 20px;
     float: left
 }
 
-.Card-container2{
+.card-container2 {
     margin-top: 15px;
     padding-left: 0;
-    padding-right: 0 
+    padding-right: 0;
 }
 
 
-.Card-section2{
-    display: flex;
-    justify-content:center;
-    align-items: center 
-}
-
-.Card-style2{
-    width: 230px;
-    height: 205px;
-    margin: auto 
-}
-
-.Card-title2{
-    display: flex;
-    justify-content: center;
-    align-items: center
-}
-
-.Msd-logo{
-    height: 80px
-}
-
-.Card-logos2{
-    height: 70px
-}
-
-.Card-text2{
-    margin-top: 15px; 
-    font-size: 14px;
-    display: flex; 
-    justify-content: center;
-    align-items: center
-}
-
-.Configure-button{
+.card-section2 {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 32px;
-    width: 200px
+    /* margin-left:-20px */
 }
 
-.Div-end{
+.card-style2 {
+    /* width: 230px; */
+    height: 205px;
+    margin: auto;
+    margin-left: 0px
+}
+
+.card-title2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.msd-logo {
+    height: 70px
+}
+
+.card-logos2 {
+    height: 70px
+}
+
+.card-text2 {
+    margin-top: 15px;
+    font-size: 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center
+}
+
+.configure-button {
+    display: flex;
+    justify-content: center !important;
+    align-items: center !important;
+    height: 32px;
+    width: 200px;
+    text-align: center !important;
+}
+
+
+.div-end {
     margin-top: 15px;
     padding-left: 0;
     padding-right: 0;
     height: 110px
 }
 
-.Search-placeholder{
+.search-placeholder {
     height: 33px !important;
     border: 1px solid grey !important;
     border-radius: 0 6px 6px 0 !important
 }
 
-.Search-icon{
+.search-icon {
     position: absolute;
     right: 5px;
-    top: 6px 
+    top: 6px
 }
 
 
-.Div-margintop{
+.div-margintop {
     margin-top: 50px
 }
 
 
-.Navbar-header{
-    margin-left:30px
+.Navbar-header {
+    margin-left: 30px
 }
 
-.Vertical-span{
-    margin-left:17px
+.vertical-span {
+    margin-left: 17px
 }
 
-.Back-label{
-    margin-left:6px
+.back-label {
+    margin-left: 6px
 }
 
-.Caret-down{
-    margin-left:9px;
-    margin-Top:5px
+.caret-down {
+    margin-left: 9px;
+    margin-Top: 5px
 }
 
-.Card-one{
-    margin-left:25px
+.card-one {
+    margin-left: 43px
 }
 
-.Custom-space{
-    margin-left:5px
+.custom-space {
+    margin-left: 5px
 }
 
-.icons-alignment{
-    vertical-align:baseline
+.icons-alignment {
+    vertical-align: baseline
 }
 
-.text-alignment{
+.text-alignment {
     vertical-align: bottom;
 }
 
-.toggle-alignment{
-    vertical-align:text-bottom
+.toggle-alignment {
+    vertical-align: text-bottom
+}
+
+.dropdown-style {
+    position: absolute !important;
+    top: 27% !important;
+    right: 0 !important;
+    z-index: 1000;
+    display: list-item !important
+}
+
+.transparent-btn {
+    background-color: transparent;
+    border: none;
+    /* Optional: To remove the button border */
+}
+
+.alignmnet {
+    vertical-align: super
+}
+
+.sidebar-list {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.sidebar-list li {
+    margin-bottom: 10px;
+    /* Adjust this value to control the line spacing */
 }
