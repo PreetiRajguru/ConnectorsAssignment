@@ -360,3 +360,21 @@
     margin-bottom: 10px;
     /* Adjust this value to control the line spacing */
 }
+
+.sidebar-new{
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px 
+}
+
+.settings-header{
+    vertical-align: middle
+}
+
+.container-card{
+    margin-top:25px
+}
+
+.card-shadow{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19) 
+}

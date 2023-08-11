@@ -84,11 +84,11 @@ const HomePage = () => {
       <div className='left-sidebar'>
 
         {/* Sidebar content */}
-        <div style={{ display: 'flex', alignItems: 'center', marginBottom: '10px' }}>
+        <div className='sidebar-new'>
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="grey" className="bi bi-gear-fill settings-headers" viewBox="0 0 16 16" style={{ verticalAlign: 'middle', marginRight: '-3px' }}>
             <path d="M9.405 1.05c-.413-1.4-2.397-1.4-2.81 0l-.1.34a1.464 1.464 0 0 1-2.105.872l-.31-.17c-1.283-.698-2.686.705-1.987 1.987l.169.311c.446.82.023 1.841-.872 2.105l-.34.1c-1.4-.413-1.4 2.397 0 2.81l.34.1a1.464 1.464 0 0 1 .872 2.105l-.17.31c-.698 1.283.705 2.686 1.987 1.987l.311-.169a1.464 1.464 0 0 1 2.105.872l.1.34c.413 1.4 2.397 1.4 2.81 0l.1-.34a1.464 1.464 0 0 1 2.105-.872l.31.17c1.283.698 2.686-.705 1.987-1.987l-.169-.311a1.464 1.464 0 0 1 .872-2.105l.34-.1c1.4-.413 1.4-2.397 0-2.81l-.34-.1a1.464 1.464 0 0 1-.872-2.105l.17-.31c.698-1.283-.705-2.686-1.987-1.987l-.311.169a1.464 1.464 0 0 1-2.105-.872l-.1-.34zM8 10.93a2.929 2.929 0 1 1 0-5.86 2.929 2.929 0 0 1 0 5.858z" />
           </svg>
-          <span className='settings-headers' style={{ verticalAlign: 'middle' }}>SETTINGS</span>
+          <span className='settings-headers settings-header'>SETTINGS</span>
         </div>
 
         <hr className='hr-tag'></hr>
@@ -275,11 +275,11 @@ const HomePage = () => {
         <div className='div-background'>
           <span className='card-section1'><b>NEW CONNECTORS</b></span>
 
-          <div class="container" style={{marginTop:"25px"}}>
+          <div class="container container-card">
           <div class="row" >
             <div class="col">
               {/* card 1 */}
-              <div class="card card-style2" style={{ boxShadow: "0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)" }}>
+              <div class="card card-style2 card-shadow">
                 <div class="card-body">
                   <div class="card-title card-title2">
                     <img src={logoImage2} alt="Logo" className='msd-logo' />
@@ -295,7 +295,7 @@ const HomePage = () => {
 
              {/* 2 card */}
              <div class="col" style={{ padding: "0" }}>
-                <div class="card card-style2" style={{ boxShadow: "0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)" }}>
+                <div class="card card-style2 card-shadow">
                   <div class="card-body">
                     <div class="card-title card-title2">
                       <img src={logoImage4} alt="Logo" className='card-logos2' />
@@ -313,7 +313,7 @@ const HomePage = () => {
 
            {/* 3 card */}
            <div class="col">
-                <div class="card card-style2" style={{ boxShadow: "0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)" }}>
+                <div class="card card-style2 card-shadow">
                   <div class="card-body">
                     <div class="card-title card-title2">
                       <img src={logoImage3} alt="Logo" className='card-logos2' />
@@ -331,7 +331,7 @@ const HomePage = () => {
 
              {/* 4 card */}
              <div class="col" style={{ padding: "0" }}>
-                <div class="card card-style2" style={{ boxShadow: "0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)" }}>
+                <div class="card card-style2 card-shadow">
                   <div class="card-body">
                     <div class="card-title card-title2">
                       <img src={logoImage3} alt="Logo" className='card-logos2' />
@@ -348,7 +348,7 @@ const HomePage = () => {
 
               {/* 5 card */}
               <div class="col">
-                <div class="card card-style2" style={{ boxShadow: "0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)" }}>
+                <div class="card card-style2 card-shadow">
                   <div class="card-body">
                     <div class="card-title card-title2">
                       <img src={logoImage3} alt="Logo" className='card-logos2' />
