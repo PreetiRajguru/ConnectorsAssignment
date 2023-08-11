@@ -18,7 +18,7 @@
     font-size: 12px;
     text-align: left !important;
     margin-right: 20px !important;
-    width: 10 !important
+    width: 10 !important;
 }
 
 .hr-tag {
@@ -202,12 +202,6 @@
 }
 
 
-.card-section1 {
-    margin-left: 13px;
-    font-size: 14px;
-}
-
-
 .card-text {
     font-size: 14px;
     margin-left: 7px
@@ -218,28 +212,14 @@
     float: left
 }
 
-.card-container2 {
-    margin-top: 15px;
-    padding-left: 0;
-    padding-right: 0;
-}
-
-
-.card-section2 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    /* margin-left:-20px */
-}
-
-.card-style2 {
+.new-card-style {
     /* width: 230px; */
     height: 205px;
     margin: auto;
     margin-left: 0px
 }
 
-.card-title2 {
+.new-card-title {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -249,11 +229,7 @@
     height: 70px
 }
 
-.card-logos2 {
-    height: 70px
-}
-
-.card-text2 {
+.new-card-text {
     margin-top: 15px;
     font-size: 14px;
     display: flex;
@@ -378,4 +354,84 @@
 
 .card-shadow {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
+}
+
+.demo-link {
+    color: black;
+    text-decoration: none;
+    padding: 10px;
+}
+
+.sidebar-icon{
+    vertical-align: middle;
+    margin-right: -3px ;
+    font-size: 17px; 
+}
+
+.connectors{
+    color:blue;
+    text-align: left
+}
+
+.main-section{
+    flex: 1 
+}
+
+.ro-button{
+    width: 40px !important;
+    height: 33px !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    flex: 1 !important;
+    position: relative !important   
+}
+
+.search{
+    background-color: white;
+    margin-left: 7px;
+    border-radius: 6px 0 0 6px;
+    height: 33px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between 
+}
+
+.drop-color{
+    background-color: grey
+}
+
+.search-bar{
+    position: relative
+}
+
+.card-padding{
+    padding: 6px !important
+}
+
+.card-border-shadow{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19) 
+}
+
+.desc-height{
+    height: 40px
+}
+
+.link{
+    vertical-align: -7px
+}
+
+.search-color{
+    color:grey
+}
+
+.caret-down{
+    color:grey;
+    font-size: 12px; 
+}
+
+.green-color{
+    color:green;
+    font-size: 20px; 
+    vertical-align: -2px
 }
