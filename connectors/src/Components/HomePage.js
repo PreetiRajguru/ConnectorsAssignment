@@ -10,6 +10,27 @@ import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 
 const HomePage = () => {
 
+  const newConnectorsData = [{
+    cardicon: { logoImage2 },
+    cardtitle: 'Microsoft Dynamics'
+  },
+  {
+    cardicon: { logoImage4 },
+    cardtitle: 'Custom Connector  '
+  },
+  {
+    cardicon: { logoImage3 },
+    cardtitle: 'Another Connector'
+  },
+  {
+    cardicon: { logoImage3 },
+    cardtitle: 'Another Connector'
+  },
+  {
+    cardicon: { logoImage3 },
+    cardtitle: 'Another Connector'
+  }]
+
   const connectorsData = [{
     cardicon: { logoImage2 },
     cardtitle: 'Microsoft Dynamics',
@@ -52,6 +73,7 @@ const HomePage = () => {
   }]
 
   const [connectors, setConnectors] = useState(connectorsData);
+  const [newConnectors, setnewConnectors] = useState(newConnectorsData);
   const [drop, setDrop] = useState(Array(connectorsData.length).fill(false));
 
   const handleToggle = (index) => {
@@ -275,96 +297,28 @@ const HomePage = () => {
         <div className='div-background'>
           <span className='card-section1'><b>NEW CONNECTORS</b></span>
 
-          <div class="container container-card">
-          <div class="row" >
-            <div class="col">
-              {/* card 1 */}
-              <div class="card card-style2 card-shadow">
-                <div class="card-body">
-                  <div class="card-title card-title2">
-                    <img src={logoImage2} alt="Logo" className='msd-logo' />
-                  </div>
-                  <span class="card-text card-text2">Microsoft Dynamics</span>
-                  <br />
-                  <Link to="/configure" className="btn btn-outline-secondary configure-button">
-                    Configure
-                  </Link>
-                </div>
-              </div>
+          <div class="container card-container">
+            <div class="row">
+              {newConnectors.map((item, index) => {
+                return (
+                  <div key={index} className="col-sm " style={{ padding: "6px" }}>
+                    <div class="card " style={{ boxShadow: "0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)" }}>
+                      <div class="card-body">
+                        <div class="card-title card-title2">
+                          <img src={item.cardicon.logoImage2 || item.cardicon.logoImage3 || item.cardicon.logoImage4} alt="Logo" className='msd-logo' />
+                        </div>
+                        <span class="card-text card-text2">{item.cardtitle}</span>
+                        <br />
+                        <Link to="/configure" className="btn btn-outline-secondary configure-button">
+                          Configure
+                        </Link>
+                      </div>
+                    </div>
+                  </div>)
+              })}
             </div>
-
-             {/* 2 card */}
-             <div class="col" style={{ padding: "0" }}>
-                <div class="card card-style2 card-shadow">
-                  <div class="card-body">
-                    <div class="card-title card-title2">
-                      <img src={logoImage4} alt="Logo" className='card-logos2' />
-                      <br /><br /><br />
-                    </div>
-                    <span class="card-text card-text2">Custom Connector</span>
-                    <br />
-                    <Link to="/configure" className="btn btn-outline-secondary configure-button">
-                      Configure
-                    </Link>
-                  </div>
-                </div>
-              </div>
-
-
-           {/* 3 card */}
-           <div class="col">
-                <div class="card card-style2 card-shadow">
-                  <div class="card-body">
-                    <div class="card-title card-title2">
-                      <img src={logoImage3} alt="Logo" className='card-logos2' />
-                      <br /><br /><br />
-                    </div>
-                    <span class="card-text card-text2">Another Connector</span>
-                    <br />
-                    <Link to="/configure" className="btn btn-outline-secondary configure-button">
-                      Configure
-                    </Link>
-                  </div>
-                </div>
-              </div>
-
-
-             {/* 4 card */}
-             <div class="col" style={{ padding: "0" }}>
-                <div class="card card-style2 card-shadow">
-                  <div class="card-body">
-                    <div class="card-title card-title2">
-                      <img src={logoImage3} alt="Logo" className='card-logos2' />
-                      <br /><br /><br />
-                    </div>
-                    <span class="card-text card-text2">Another Connector</span>
-                    <br />
-                    <Link to="/configure" className="btn btn-outline-secondary configure-button">
-                      Configure
-                    </Link>
-                  </div>
-                </div>
-              </div>
-
-              {/* 5 card */}
-              <div class="col">
-                <div class="card card-style2 card-shadow">
-                  <div class="card-body">
-                    <div class="card-title card-title2">
-                      <img src={logoImage3} alt="Logo" className='card-logos2' />
-                      <br /><br /><br />
-                    </div>
-                    <span class="card-text card-text2">Another Connector</span>
-                    <br />
-                    <Link to="/configure" className="btn btn-outline-secondary configure-button">
-                      Configure
-                    </Link>
-                  </div>
-                </div>
-              </div>
           </div>
 
-        </div>
         </div>
 
         <div className='div-background'>
