@@ -53,17 +53,53 @@ function Stepper({ current, steps }) {
 
 function StepperState() {
     const [current, setCurrent] = useState(0);
+
     const [generalDetails, setGeneralDetails] = useState({});
-    const [validationErrors, setValidationErrors] = useState({});
+    const [generalDetailsErrors, setGeneralDetailsErrors] = useState({});
+
+    const [connectAccount, setConnectAccount] = useState({});
+    const [connectAccountErrors, setConnectAccountErrors] = useState({});
+
     const CurrentStepComponent = steps[current].component;
+
+    const isValidURL = (url) => {
+        const pattern = /^(https?:\/\/)?([\da-z.-]+)\.([a-z.]{2,6})([/\w .-]*)*\/?$/;
+        return pattern.test(url);
+    };
 
     const handleNext = () => {
 
-        if (!generalDetails.name) {
-            setValidationErrors({ generalDetails: "Name is required." });
+        if (current === 0 && !generalDetails.name) {
+            setGeneralDetailsErrors({ generalDetails: "Name is required." });
             return;
         }
 
+        if (current === 1) {
+            const errors = {};
+
+            if (!connectAccount.dynamics) {
+                errors.dynamics = "Dynamics CRM URL is required.";
+            }
+            else if (!isValidURL(connectAccount.dynamics)) {
+                errors.dynamics = "Dynamics CRM URL is incorrect.";
+            }
+
+            if (!connectAccount.ovation) {
+                errors.ovation = "OvationCXM API Key is required.";
+            }
+
+            if (!connectAccount.secret) {
+                errors.secret = "OvationCXM API Secret is required.";
+            }
+
+            if (Object.keys(errors).length > 0) {
+                setConnectAccountErrors(errors);
+                return;
+            }
+        }
+
+
+        //next step
         setCurrent(Math.min(current + 1, steps.length));
     }
 
@@ -89,8 +125,12 @@ function StepperState() {
             <CurrentStepComponent
                 generalDetails={generalDetails}
                 setGeneralDetails={setGeneralDetails}
-                validationErrors={validationErrors}
-                setValidationErrors={setValidationErrors}
+                generalDetailsErrors={generalDetailsErrors}
+                setGeneralDetailsErrors={setGeneralDetailsErrors}
+                connectAccount={connectAccount}
+                setConnectAccount={setConnectAccount}
+                connectAccountErrors={connectAccountErrors}
+                setConnectAccountErrors={setConnectAccountErrors}
             />
 
             <div>
