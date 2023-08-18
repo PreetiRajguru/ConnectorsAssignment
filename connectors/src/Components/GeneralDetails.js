@@ -1,6 +1,6 @@
 import React from 'react';
 
-const GeneralDetails = ({ generalDetails, setGeneralDetails, validationErrors, setValidationErrors }) => {
+const GeneralDetails = ({ generalDetails, setGeneralDetails, generalDetailsErrors, setGeneralDetailsErrors }) => {
 
     const GeneralDetailsData = [{
         desc: "Microsoft Dynamics is a line of enterprise Resource Planning and customer relationship management software applications. Microsoft markets Dynamics applications through a network of reselling partners who provide specialized services. ",
@@ -9,20 +9,20 @@ const GeneralDetails = ({ generalDetails, setGeneralDetails, validationErrors, s
     }]
 
     const clearValidationError = () => {
-        setValidationErrors({});
+        setGeneralDetailsErrors({});
     };
 
     const handleClearName = () => {
-        setGeneralDetails('');
+        setGeneralDetails({ ...generalDetails, name: ""});
     };
 
     const getInput = (e) => {
         clearValidationError({});
-        setGeneralDetails({ name: e.target.value });
+        setGeneralDetails({ ...generalDetails, name: e.target.value });
     }
 
     const inputStyle = {
-        border: validationErrors.generalDetails ? '1px solid red' : '1px solid #ced4da',
+        border: generalDetailsErrors.generalDetails ? '1px solid red' : '1px solid #ced4da',
     };
 
     return (
@@ -53,7 +53,6 @@ const GeneralDetails = ({ generalDetails, setGeneralDetails, validationErrors, s
                         Name<span className='name-label'>*</span>
                     </label>
                     <div className="input-icon">
-                        {validationErrors.generalDetails && <div className="invalid-feedback">{validationErrors.generalDetails}</div>}
                         <input
                             type="text"
                             className="form-control name-input"
@@ -69,6 +68,7 @@ const GeneralDetails = ({ generalDetails, setGeneralDetails, validationErrors, s
                                 className="bi bi-x input-icon-icon"
                             />
                         </button>
+                        {generalDetailsErrors.generalDetails && <div className="invalid-feedback">{generalDetailsErrors.generalDetails}</div>}
                     </div>
                 </div>
 
