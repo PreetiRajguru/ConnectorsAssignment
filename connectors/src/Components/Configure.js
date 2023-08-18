@@ -11,7 +11,7 @@ const steps = [
 ];
 
 function DoneIcon() {
-    return "✓";
+    return <i class="bi bi-check-circle-fill"></i>;
 }
 
 function StepContent({ done, index }) {
