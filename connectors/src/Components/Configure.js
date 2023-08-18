@@ -1,26 +1,25 @@
 import React, { useState } from 'react';
 import GeneralDetails from './GeneralDetails';
 import ConnectAccount from './ConnectAccount';
-import SyncMappings from './SyncMappings';
 import { Link } from 'react-router-dom';
 
 const steps = [
     { label: 'General Details', component: GeneralDetails },
     { label: 'Connect Account', component: ConnectAccount },
-    { label: 'Sync & Mappings', component: SyncMappings },
-    { label: 'Filters', component: ConnectAccount },
+    { label: 'Sync & Mappings', component: GeneralDetails },
+    { label: 'Filters', component: GeneralDetails },
     { label: 'Test & enable Connection', component: GeneralDetails },
 ];
 
 function DoneIcon() {
-    return "✓";
+    return <i class="bi bi-check-circle-fill"></i>;
 }
 
 function StepContent({ done, index }) {
     return done ? <DoneIcon /> : index + 1;
 }
 
-function renderStep({ label }, key) {
+function RenderStep({ label }, key) {
     const { current } = this;
     const done = key < current;
     const currentStep = key === current;
@@ -46,7 +45,7 @@ function renderStep({ label }, key) {
 function Stepper({ current, steps }) {
     return (
         <ul className="stepper">
-            {steps.map(renderStep, { current })}
+            {steps.map(RenderStep, { current })}
         </ul>
     )
 }
@@ -136,7 +135,7 @@ function StepperState() {
             <div>
                 <hr className='bottom-hr'></hr>
                 <Link to="/" className="btn btn-outline-secondary me-2 cancel-button">Cancel </Link>
-                <button type="button" className={saveAndFinishClass}>Save & Finish</button>
+                <Link type="button" className={saveAndFinishClass}>Save & Finish</Link>
                 {current !== 0 && <button onClick={handlePrevious} className='btn btn-outline-secondary me-2 previous-step-button'>Previous Step</button>}
                 <button onClick={handleNext} class="btn btn-primary next-button">Next</button>
             </div>

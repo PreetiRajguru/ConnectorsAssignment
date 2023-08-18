@@ -4,8 +4,8 @@ const GeneralDetails = ({ generalDetails, setGeneralDetails, generalDetailsError
 
     const GeneralDetailsData = [{
         desc: "Microsoft Dynamics is a line of enterprise Resource Planning and customer relationship management software applications. Microsoft markets Dynamics applications through a network of reselling partners who provide specialized services. ",
-        link1: '#',
-        link2: '#',
+        learnMoreLink: '#',
+        helpLink: '#',
     }]
 
     const clearValidationError = () => {
@@ -36,16 +36,19 @@ const GeneralDetails = ({ generalDetails, setGeneralDetails, generalDetailsError
                             {item.desc}
                         </span>
 
-                        <br /><br />
-                        <a href={item.link1} className='links'>Learn More  <i className="bi bi-chevron-right"></i></a>
-
-                        <br /><br />
-                        <a href={item.link2} className='links'>Get Help Setting Up Connector   <i className="bi bi-chevron-right"></i></a><br /><br />
+                        <div className='spacing-links'>
+                            <a href={item.learnMoreLink} className='links'>Learn More <i className="bi bi-chevron-right"></i></a>
+                        </div>
+                        <div className='spacing-links' id='spacing-links-bottom'>
+                            <a href={item.helpLink} className='links'>Get Help Setting Up Connector <i className="bi bi-chevron-right"></i></a>
+                        </div>
 
                     </div>)
             })}
 
-            <span><b>GENERAL DETAILS</b></span><br /><br />
+            <div id='spacing-links-bottom'>
+                <span><b>GENERAL DETAILS</b></span>
+            </div>
 
             <form>
                 <div className="form-group">
@@ -74,8 +77,7 @@ const GeneralDetails = ({ generalDetails, setGeneralDetails, generalDetailsError
 
                 <div className="form-group">
                     <div className="mb-3">
-                        <br />
-                        <label htmlFor="exampleFormControlTextarea1" className="form-label">Description</label>
+                        <label htmlFor="exampleFormControlTextarea1" className="form-label spacing-links">Description</label>
                         <textarea
                             className="form-control name-input"
                             id="desc"

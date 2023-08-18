@@ -13,22 +13,22 @@
     border-right: 1px solid black
 }
 
-.settings-headers {
+#settings-headers {
     color: grey;
     font-size: 12px;
-    text-align: left !important;
-    margin-right: 20px !important;
-    width: 10 !important;
+    text-align: left;
+    margin-right: 20px;
+    width: 10;
 }
 
 .hr-tag {
     width: 120px
 }
 
-.sidebar-headers {
+#sidebar-headers {
     color: grey;
     text-align: left;
-    font-size: 12px !important
+    font-size: 12px
 }
 
 .sidebar-content {
@@ -61,30 +61,29 @@
     background: none;
     padding: 0;
     cursor: pointer;
-    /* margin-left: 15px; */
     margin-left: 41px
 }
 
-.Navbar-buttons {
+#navbar-buttons {
     width: 40px;
     height: 33px;
-    display: flex !important;
-    justify-content: center !important;
-    align-items: center !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     flex: 1;
-    margin-right: 5px !important
+    margin-right: 5px
 }
 
-.vertical-line1 {
+.vertical-line-back {
     color: grey;
     margin-top: 3px;
     margin-left: 5px
 }
 
-.vertical-line2 {
+#vertical-line-buttons {
     color: grey;
     margin-top: 3px;
-    margin-left: 9px !important
+    margin-left: 9px
 }
 
 .ul-style {
@@ -98,33 +97,23 @@
     margin-top: 16px
 }
 
-.button-Navbar {
-    width: 40px;
-    height: 33px !important;
-    display: flex !important;
-    justify-content: center !important;
-    align-items: center !important;
-    flex: 1;
-    position: 'relative' !important
+#orange-dot {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    width: 10px;
+    height: 10px;
+    background-color: orange;
+    border-radius: 50%;
+    border: 2px solid white
 }
 
-.orange-dot {
-    position: absolute !important;
-    top: -5px !important;
-    right: -5px !important;
-    width: 10px !important;
-    height: 10px !important;
-    background-color: orange !important;
-    border-radius: 50% !important;
-    border: 2px solid white !important
-}
-
-.call-button {
+#call-button {
     width: 40px;
     height: 33px;
-    display: flex !important;
-    justify-content: center !important;
-    align-items: center !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     flex: 1;
     margin-right: 5px;
     margin-left: 7px
@@ -148,17 +137,6 @@
     height: '9px';
     background-color: 'green';
     border-radius: '50%';
-}
-
-
-.search-button {
-    background-color: 'white' !important;
-    margin-left: '7px' !important;
-    border-radius: '6px 0 0 6px' !important;
-    height: '30px' !important;
-    display: 'flex' !important;
-    align-items: 'center' !important;
-    justify-content: 'space-between' !important
 }
 
 .div-background {
@@ -236,14 +214,14 @@
     align-items: center
 }
 
-.configure-button {
+#configure-button {
     display: flex;
-    justify-content: center !important;
-    align-items: center !important;
+    justify-content: center;
+    align-items: center;
     height: 32px;
     width: 200px;
-    text-align: center !important;
-    margin-left: 7px !important
+    text-align: center;
+    margin-left: 7px
 }
 
 
@@ -254,10 +232,10 @@
     height: 110px
 }
 
-.search-placeholder {
-    height: 33px !important;
-    border: 1px solid grey !important;
-    border-radius: 0 6px 6px 0 !important
+#search-placeholder {
+    height: 33px;
+    border: 1px solid grey;
+    border-radius: 0 6px 6px 0
 }
 
 .search-icon {
@@ -309,12 +287,12 @@
     vertical-align: text-bottom
 }
 
-.dropdown-style {
-    position: absolute !important;
-    top: 27% !important;
-    right: 0 !important;
+#dropdown-style {
+    position: absolute;
+    top: 27%;
+    right: 0;
     z-index: 1000;
-    display: list-item !important
+    display: list-item
 }
 
 .transparent-btn {
@@ -374,14 +352,14 @@
     flex: 1
 }
 
-.ro-button {
-    width: 40px !important;
-    height: 33px !important;
-    display: flex !important;
-    justify-content: center !important;
-    align-items: center !important;
-    flex: 1 !important;
-    position: relative !important
+#ro-button {
+    width: 40px;
+    height: 33px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    position: relative
 }
 
 .search {
@@ -402,8 +380,8 @@
     position: relative
 }
 
-.card-padding {
-    padding: 6px !important
+#card-padding {
+    padding: 6px
 }
 
 .card-border-shadow {
@@ -648,6 +626,13 @@ body {
     color: red;
 }
 
+.spacing-links {
+    margin-top: 20px
+}
+
+#spacing-links-bottom {
+    margin-bottom: 23px
+}
 .dropdown {
     cursor: pointer
 }
