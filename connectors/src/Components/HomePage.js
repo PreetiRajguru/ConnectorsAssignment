@@ -112,33 +112,33 @@ const HomePage = () => {
 
         {/* Sidebar content */}
         <div className='sidebar-new'>
-          <i class="bi bi-gear-fill sidebar-icon settings-headers"></i>
-          <span className='settings-headers settings-header'>SETTINGS</span>
+          <i class="bi bi-gear-fill sidebar-icon" id="settings-headers"></i>
+          <span className='settings-header' id="settings-headers">SETTINGS</span>
         </div>
 
         <hr className='hr-tag'></hr>
 
         <ul className='sidebar-list'>
-          <li className='sidebar-headers'>PERSONAL</li>
+          <li id="sidebar-headers">PERSONAL</li>
           <li className='sidebar-content'><b>My Profile</b></li>
           <li className='sidebar-content'><b>Notifications</b></li>
 
-          <li className='sidebar-headers'>ORGANIZATION</li>
+          <li id="sidebar-headers">ORGANIZATION</li>
           {['General', 'Roles & Permissions', 'Teams', 'Users'].map((item, index) => (
             <li className='sidebar-content' key={index}><b>{item}</b></li>
           ))}
 
-          <li className='sidebar-headers'>COMMUNICATIONS</li>
+          <li id="sidebar-headers">COMMUNICATIONS</li>
           {['Channels', 'Quick Replies', 'Templates'].map((item, index) => (
             <li className='sidebar-content' key={index}><b>{item}</b></li>
           ))}
 
-          <li className='sidebar-headers'>KNOWLEDGE</li>
+          <li id="sidebar-headers">KNOWLEDGE</li>
           <li className='sidebar-content'><b>Approval Process</b></li>
           <li className='sidebar-content'><b>Libraries</b></li>
           <li className='sidebar-content'><b>Templates</b></li>
 
-          <li className='sidebar-headers'>OBJECT MANAGEMENT</li>
+          <li id="sidebar-headers">OBJECT MANAGEMENT</li>
           <li className='sidebar-content'><b>Bulk Imports</b></li>
           <li className='sidebar-content'><b>Card Layouts</b></li>
           <li className='sidebar-content'><b>Custom Fields</b></li>
@@ -159,22 +159,22 @@ const HomePage = () => {
               <text className='back-label'>Back</text>
             </button>
 
-            <span className='vertical-line1 vertical-span'>|</span>
+            <span className='vertical-line-back vertical-span'>|</span>
 
             <b className='Navbar-header'>Connectors</b>
           </div>
           <ul className='ul-style'>
             <div className='button-div'>
-              <button type="button" class="btn btn-outline-primary Navbar-buttons">JE</button>
-              <button type="button" class="btn btn-outline-primary Navbar-buttons">BH</button>
-              <button type="button" class="btn btn-outline-warning Navbar-buttons">SL</button>
-              <button type="button" class="btn btn-outline-warning ro-button">
+              <button type="button" class="btn btn-outline-primary" id="navbar-buttons">JE</button>
+              <button type="button" class="btn btn-outline-primary" id="navbar-buttons">BH</button>
+              <button type="button" class="btn btn-outline-warning" id="navbar-buttons">SL</button>
+              <button type="button" class="btn btn-outline-warning" id="ro-button">
                 RO
-                <span className='orange-dot'></span>
+                <span id="orange-dot"></span>
               </button>
-              <span className='vertical-line2'>|</span>
+              <span id="vertical-line-buttons">|</span>
 
-              <button type="button" class="btn btn-outline-primary call-button ">
+              <button type="button" class="btn btn-outline-primary" id="call-button">
                 <i class="bi bi-telephone-plus-fill"></i>
               </button>
 
@@ -203,7 +203,7 @@ const HomePage = () => {
                   </div>
                   <form class="form-inline my-2 my-lg-0">
                     <div className='search-bar'>
-                      <input class="form-control mr-sm-2 search-placeholder" type="search" placeholder="Search" aria-label="Search" />
+                      <input class="form-control mr-sm-2" id="search-placeholder" type="search" placeholder="Search" aria-label="Search" />
                       <i class="bi bi-search search-icon"></i>
                     </div>
                   </form>
@@ -231,7 +231,7 @@ const HomePage = () => {
             <div class="row">
               {connectors.map((item, index) => {
                 return (
-                  <div key={index} className="col-sm card-padding">
+                  <div key={index} className="col-sm" id="card-padding">
                     <div class="card card-border-shadow">
                       <div class="card-body">
                         <h7 class="card-title">
@@ -240,7 +240,7 @@ const HomePage = () => {
                         </h7>
                         <i class="bi bi-three-dots  card-one icons-alignment" onClick={() => handleDropDown(index)}></i>
                         {drop[index] && (
-                          <div className="dropdown-menu dropdown-style">
+                          <div className="dropdown-menu" id="dropdown-style">
                             <a className="dropdown-item" href="\configure">
                               Edit
                             </a>
@@ -289,7 +289,7 @@ const HomePage = () => {
             <div class="row">
               {newConnectors.map((item, index) => {
                 return (
-                  <div key={index} className="col-sm card-padding">
+                  <div key={index} className="col-sm" id="card-padding">
                     <div class="card card-border-shadow">
                       <div class="card-body">
                         <div class="card-title new-card-title">
@@ -297,7 +297,7 @@ const HomePage = () => {
                         </div>
                         <span class="card-text new-card-text">{item.cardtitle}</span>
                         <br />
-                        <Link to="/configure" className="btn btn-outline-secondary configure-button">
+                        <Link to="/configure" className="btn btn-outline-secondary" id="configure-button">
                           Configure
                         </Link>
                       </div>
