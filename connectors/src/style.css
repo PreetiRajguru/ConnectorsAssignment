@@ -190,12 +190,6 @@
     float: left
 }
 
-.new-card-style {
-    height: 205px;
-    margin: auto;
-    margin-left: 0px
-}
-
 .new-card-title {
     display: flex;
     justify-content: center;
