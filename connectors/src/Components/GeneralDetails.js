@@ -56,7 +56,6 @@ const GeneralDetails = ({ generalDetails, setGeneralDetails, validationErrors, s
                         Name<span className='name-label'>*</span>
                     </label>
                     <div className="input-icon">
-                        {validationErrors.generalDetails && <div className="invalid-feedback">{validationErrors.generalDetails}</div>}
                         <input
                             type="text"
                             className="form-control name-input"
@@ -72,6 +71,8 @@ const GeneralDetails = ({ generalDetails, setGeneralDetails, validationErrors, s
                                 className="bi bi-x input-icon-icon"
                             />
                         </button>
+                        {validationErrors.generalDetails && <div className="invalid-feedback">{validationErrors.generalDetails}</div>}
+
                     </div>
                 </div>
 
