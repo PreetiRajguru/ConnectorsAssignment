@@ -20,16 +20,16 @@ const Navbar = () => {
                 </div>
                 <ul className='ul-style'>
                     <div className='button-div'>
-                        <button type="button" class="btn btn-outline-primary Navbar-buttons">JE</button>
-                        <button type="button" class="btn btn-outline-primary Navbar-buttons">BH</button>
-                        <button type="button" class="btn btn-outline-warning Navbar-buttons">SL</button>
-                        <button type="button" class="btn btn-outline-warning ro-button">
+                        <button type="button" class="btn btn-outline-primary" id="navbar-buttons">JE</button>
+                        <button type="button" class="btn btn-outline-primary" id="navbar-buttons">BH</button>
+                        <button type="button" class="btn btn-outline-warning" id="navbar-buttons">SL</button>
+                        <button type="button" class="btn btn-outline-warning" id="ro-button">
                             RO
-                            <span className='orange-dot'></span>
+                            <span id="orange-dot"></span>
                         </button>
-                        <span className='vertical-line2'>|</span>
+                        <span id="vertical-line-buttons">|</span>
 
-                        <button type="button" class="btn btn-outline-primary call-button ">
+                        <button type="button" class="btn btn-outline-primary" id="call-button">
                             <i class="bi bi-telephone-plus-fill"></i>
                         </button>
 
@@ -58,7 +58,7 @@ const Navbar = () => {
                                 </div>
                                 <form class="form-inline my-2 my-lg-0">
                                     <div className='search-bar'>
-                                        <input class="form-control mr-sm-2 search-placeholder" type="search" placeholder="Search" aria-label="Search" />
+                                    <input class="form-control mr-sm-2" id="search-placeholder" type="search" placeholder="Search" aria-label="Search" />
                                         <i class="bi bi-search search-icon"></i>
                                     </div>
                                 </form>

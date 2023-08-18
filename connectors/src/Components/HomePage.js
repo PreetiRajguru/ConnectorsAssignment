@@ -1,9 +1,7 @@
 import React from 'react';
-import logoImage1 from '../Assets/Images/ovation.jfif';
 import logoImage2 from '../Assets/Images/msd.png';
 import logoImage3 from '../Assets/Images/another.png';
 import logoImage4 from '../Assets/Images/plugin.png';
-import logoImage5 from '../Assets/Images/profilepic.png';
 import { useState } from 'react';
 import "../style.css";
 import { Link } from 'react-router-dom';
@@ -116,13 +114,13 @@ const HomePage = () => {
         <Navbar />
 
         <div className='div-background div-margintop'>
-          <span className='card-section1'><b>CONFIGURED CONNECTORS</b></span>
+          <span className='card-configured-connectors'><b>CONFIGURED CONNECTORS</b></span>
 
           <div class="container card-container">
             <div class="row">
               {connectors.map((item, index) => {
                 return (
-                  <div key={index} className="col-sm card-padding">
+                  <div key={index} className="col-sm" id="card-padding">
                     <div class="card card-border-shadow">
                       <div class="card-body">
                         <h7 class="card-title">
@@ -131,7 +129,7 @@ const HomePage = () => {
                         </h7>
                         <i class="bi bi-three-dots  card-one icons-alignment" onClick={() => handleDropDown(index)}></i>
                         {drop[index] && (
-                          <div className="dropdown-menu dropdown-style">
+                          <div className="dropdown-menu" id="dropdown-style">
                             <a className="dropdown-item" href="\configure">
                               Edit
                             </a>
@@ -174,13 +172,13 @@ const HomePage = () => {
         </div>
 
         <div className='div-background'>
-          <span className='card-section1'><b>NEW CONNECTORS</b></span>
+          <span className='card-configured-connectors'><b>NEW CONNECTORS</b></span>
 
           <div class="container card-container">
             <div class="row">
               {newConnectors.map((item, index) => {
                 return (
-                  <div key={index} className="col-sm card-padding">
+                  <div key={index} className="col-sm" id="card-padding">
                     <div class="card card-border-shadow">
                       <div class="card-body">
                         <div class="card-title new-card-title">
@@ -188,7 +186,7 @@ const HomePage = () => {
                         </div>
                         <span class="card-text new-card-text">{item.cardtitle}</span>
                         <br />
-                        <Link to="/configure" className="btn btn-outline-secondary configure-button">
+                        <Link to="/configure" className="btn btn-outline-secondary" id="configure-button">
                           Configure
                         </Link>
                       </div>
