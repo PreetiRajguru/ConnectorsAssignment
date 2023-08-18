@@ -618,10 +618,18 @@ body {
     margin-top: 90px
 }
 
-.invalid-feedback{
+.invalid-feedback {
     display: block !important;
     width: 100%;
     margin-top: .25rem;
     font-size: .875em;
     color: red;
+}
+
+.spacing-links {
+    margin-top: 20px
+}
+
+#spacing-links-bottom {
+    margin-bottom: 23px
 }

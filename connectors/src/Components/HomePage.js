@@ -141,7 +141,9 @@ const HomePage = () => {
 
                         <hr></hr>
                         <p class="card-text card-text" >
-                          <b>{item.name}</b> <br />
+                          <div>
+                            <b>{item.name}</b>
+                          </div>
                           <div className='desc-height'>{item.description}</div>
                         </p>
                         <hr />
@@ -185,10 +187,12 @@ const HomePage = () => {
                           <img src={item.cardicon.logoImage2 || item.cardicon.logoImage3 || item.cardicon.logoImage4} alt="Logo" className='msd-logo' />
                         </div>
                         <span class="card-text new-card-text">{item.cardtitle}</span>
-                        <br />
-                        <Link to="/configure" className="btn btn-outline-secondary" id="configure-button">
-                          Configure
-                        </Link>
+                        <div className='spacing-links'>
+                          <Link to="/configure" className="btn btn-outline-secondary" id="configure-button">
+                            Configure
+                          </Link>
+                        </div>
+
                       </div>
                     </div>
                   </div>)

@@ -36,16 +36,19 @@ const GeneralDetails = ({ generalDetails, setGeneralDetails, validationErrors, s
                             {item.desc}
                         </span>
 
-                        <br /><br />
-                        <a href={item.learnMoreLink} className='links'>Learn More  <i className="bi bi-chevron-right"></i></a>
-
-                        <br /><br />
-                        <a href={item.helpLink} className='links'>Get Help Setting Up Connector   <i className="bi bi-chevron-right"></i></a><br /><br />
+                        <div className='spacing-links'>
+                            <a href={item.learnMoreLink} className='links'>Learn More <i className="bi bi-chevron-right"></i></a>
+                        </div>
+                        <div className='spacing-links' id='spacing-links-bottom'>
+                            <a href={item.helpLink} className='links'>Get Help Setting Up Connector <i className="bi bi-chevron-right"></i></a>
+                        </div>
 
                     </div>)
             })}
 
-            <span><b>GENERAL DETAILS</b></span><br /><br />
+            <div id='spacing-links-bottom'>
+                <span><b>GENERAL DETAILS</b></span>
+            </div>
 
             <form>
                 <div className="form-group">
@@ -74,8 +77,7 @@ const GeneralDetails = ({ generalDetails, setGeneralDetails, validationErrors, s
 
                 <div className="form-group">
                     <div className="mb-3">
-                        <br />
-                        <label htmlFor="exampleFormControlTextarea1" className="form-label">Description</label>
+                        <label htmlFor="exampleFormControlTextarea1" className="form-label spacing-links">Description</label>
                         <textarea
                             className="form-control name-input"
                             id="desc"
