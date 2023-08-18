@@ -18,7 +18,7 @@ function StepContent({ done, index }) {
     return done ? <DoneIcon /> : index + 1;
 }
 
-function renderStep({ label }, key) {
+function RenderStep({ label }, key) {
     const { current } = this;
     const done = key < current;
     const currentStep = key === current;
@@ -44,7 +44,7 @@ function renderStep({ label }, key) {
 function Stepper({ current, steps }) {
     return (
         <ul className="stepper">
-            {steps.map(renderStep, { current })}
+            {steps.map(RenderStep, { current })}
         </ul>
     )
 }
