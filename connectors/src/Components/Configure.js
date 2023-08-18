@@ -94,7 +94,7 @@ function StepperState() {
             <div>
                 <hr className='bottom-hr'></hr>
                 <Link to="/" className="btn btn-outline-secondary me-2 cancel-button">Cancel </Link>
-                <button type="button" className={saveAndFinishClass}>Save & Finish</button>
+                <Link type="button" className={saveAndFinishClass}>Save & Finish</Link>
                 {current !== 0 && <button onClick={handlePrevious} className='btn btn-outline-secondary me-2 previous-step-button'>Previous Step</button>}
                 <button onClick={handleNext} class="btn btn-primary next-button">Next</button>
             </div>
