@@ -225,7 +225,7 @@ const HomePage = () => {
         </nav>
 
         <div className='div-background div-margintop'>
-          <span className='card-section1'><b>CONFIGURED CONNECTORS</b></span>
+          <span className='card-configured-connectors'><b>CONFIGURED CONNECTORS</b></span>
 
           <div class="container card-container">
             <div class="row">
@@ -283,7 +283,7 @@ const HomePage = () => {
         </div>
 
         <div className='div-background'>
-          <span className='card-section1'><b>NEW CONNECTORS</b></span>
+          <span className='card-configured-connectors'><b>NEW CONNECTORS</b></span>
 
           <div class="container card-container">
             <div class="row">
