@@ -191,7 +191,6 @@
 .new-card-style {
     height: 205px;
     margin: auto;
-    margin-left: 0px
 }
 
 .new-card-title {
@@ -224,8 +223,6 @@
 
 .div-end {
     margin-top: 15px;
-    padding-left: 0;
-    padding-right: 0;
     height: 110px
 }
 
