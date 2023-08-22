@@ -5,8 +5,9 @@ import HomePage from './Components/HomePage';
 import "bootstrap/dist/css/bootstrap.min.css";
 // Bootstrap Bundle JS
 import "bootstrap/dist/js/bootstrap.bundle.min";
-import "./style.css";
+import "bootstrap-icons/font/bootstrap-icons.min.css";
 
+import "./style.css";
 
 function App() {
   return (
@@ -19,15 +20,3 @@ function App() {
 }
 
 export default App;
-
-// import React from 'react';
-
-// const HomePage = () => {
-//   return (
-//     // <div>
-//     //   <h1>Hi there!</h1>
-//     // </div>
-//   );
-// };
-
-// export default HomePage;
