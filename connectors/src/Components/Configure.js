@@ -95,7 +95,7 @@ function StepperState() {
                 <Link to="/" className="btn btn-outline-secondary me-2 cancel-button">Cancel </Link>
 
                 <Link type="button"
-                 className={isStep1 ? 'btn btn-link save-and-finish-button' : 'btn btn-link save-and-finish-button2'}
+                 className={isStep1 ? 'btn btn-link' : 'btn btn-link'}
                  id={isStep1 ? 'save-and-finish-button' : 'save-and-finish-button2'}>
                  Save & Finish
                 </Link>

@@ -1,12 +1,11 @@
 import React from 'react';
 import logoImage5 from '../Assets/Images/profilepic.png';
-import logoImage1 from '../Assets/Images/ovation.jfif';
+import logoImage1 from '../Assets/Images/ovation.png';
 
 const Navbar = () => {
     return (
         <>
-            <nav className='Navbar'>
-
+            <nav id="navbar">
                 <div>
                     <img src={logoImage1} alt="Logo" className='image-1' />
                     <button className='back-button'>
@@ -62,7 +61,6 @@ const Navbar = () => {
                                 </form>
                             </div>
                         </div>
-
                         <div className='profile-place'>
                             <img
                                 src={logoImage5}
