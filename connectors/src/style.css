@@ -499,11 +499,6 @@ body {
 }
 
 .input-icon-icon {
-    /* position: absolute; */
-    /* padding-left: 0px; */
-    /* top: 50%; */
-    /* transform: translateY(-50%); */
-    /* pointer-events: none; */
     color: grey;
     text-align: center;
     margin-left: -6px;
@@ -549,16 +544,16 @@ body {
     margin-top: 60px
 }
 
-.save-and-finish-button {
+#save-and-finish-button {
     margin-top: 60px;
     margin-left: 77rem;
-    text-decoration: none !important
+    text-decoration: none 
 }
 
-.save-and-finish-button2 {
+#save-and-finish-button2 {
     margin-top: 60px;
     margin-left: 68rem;
-    text-decoration: none !important
+    text-decoration: none
 }
 
 .previous-step-button {
@@ -632,4 +627,8 @@ body {
 
 #spacing-links-bottom {
     margin-bottom: 23px
+}
+
+.arrow-icon{
+    margin-right: 10px
 }

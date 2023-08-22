@@ -33,7 +33,6 @@ const Navbar = () => {
                             <i class="bi bi-telephone-plus-fill"></i>
                         </button>
 
-
                         <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
 
                             <div class="btn-group" role="group">
@@ -50,7 +49,6 @@ const Navbar = () => {
                                     <i class="bi bi-gear-fill search-color"></i>
                                     <i class="bi bi-caret-down-fill caret-down caret-down"></i>
                                 </button>
-
 
                                 <div class="dropdown-menu drop-color" aria-labelledby="btnGroupDrop1">
                                     <a class="dropdown-item" href="#">Dropdown link</a>
@@ -82,4 +80,4 @@ const Navbar = () => {
     )
 }
 
-export default Navbar
+export default Navbar;

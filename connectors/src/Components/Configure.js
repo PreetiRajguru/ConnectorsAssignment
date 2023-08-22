@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import GeneralDetails from './GeneralDetails';
 import { Link } from 'react-router-dom';
+import * as constants from '../Constants/ConstantMessages';
 
 const steps = [
     { label: 'General Details', component: GeneralDetails },
@@ -25,16 +26,16 @@ function RenderStep({ label }, key) {
     const currentClassName = currentStep ? ' stepper-step-current' : '';
     const doneClassName = done ? ' stepper-step-done' : '';
     const className = `stepper-step${currentClassName}${doneClassName}`;
-
     const isLastStep = key === steps.length - 1;
-    const icon = isLastStep ? null : <i className="bi bi-chevron-right arrow-position"></i>;
 
     return (
         <li className={className} key={key}>
             <div className="  row stepper-position ">
                 <div className="stepper__step__content">
                     <div className="stepper-step-index step-circle stepper-index"><StepContent done={done} index={key} /></div>
-                    <div className='stepper-labels'>{label}{icon}</div>
+                    <div className='stepper-labels'>{label}
+                        {!isLastStep && <i className="bi bi-chevron-right arrow-position arrow-icon"></i>}
+                    </div>
                 </div>
             </div>
         </li>
@@ -54,11 +55,12 @@ function StepperState() {
     const [generalDetails, setGeneralDetails] = useState({});
     const [validationErrors, setValidationErrors] = useState({});
     const CurrentStepComponent = steps[current].component;
+    const isStep1 = current === 0;
 
     const handleNext = () => {
 
         if (!generalDetails.name) {
-            setValidationErrors({ generalDetails: "Name is required." });
+            setValidationErrors({ generalDetails: constants.NAME_REQUIRED });
             return;
         }
 
@@ -68,9 +70,6 @@ function StepperState() {
     const handlePrevious = () => {
         setCurrent(Math.max(current - 1, 0));
     }
-
-    const isStep1 = current === 0;
-    const saveAndFinishClass = isStep1 ? 'btn btn-link save-and-finish-button' : 'btn btn-link save-and-finish-button2';
 
     return (
         <>
@@ -94,7 +93,13 @@ function StepperState() {
             <div>
                 <hr className='bottom-hr'></hr>
                 <Link to="/" className="btn btn-outline-secondary me-2 cancel-button">Cancel </Link>
-                <Link type="button" className={saveAndFinishClass}>Save & Finish</Link>
+
+                <Link type="button"
+                 className={isStep1 ? 'btn btn-link save-and-finish-button' : 'btn btn-link save-and-finish-button2'}
+                 id={isStep1 ? 'save-and-finish-button' : 'save-and-finish-button2'}>
+                 Save & Finish
+                </Link>
+
                 {current !== 0 && <button onClick={handlePrevious} className='btn btn-outline-secondary me-2 previous-step-button'>Previous Step</button>}
                 <button onClick={handleNext} class="btn btn-primary next-button">Next</button>
             </div>
