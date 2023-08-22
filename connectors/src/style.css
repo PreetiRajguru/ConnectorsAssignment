@@ -36,7 +36,7 @@
     text-align: left;
 }
 
-.Navbar {
+#navbar {
     background-color: white;
     height: 50px;
     display: flex;
@@ -144,7 +144,6 @@
     background-color: #e3f0f2
 }
 
-
 .profile-imagecircle {
     height: 33px;
     margin-left: 5px
@@ -179,7 +178,6 @@
     padding-right: 0
 }
 
-
 .card-text {
     font-size: 14px;
     margin-left: 7px
@@ -188,6 +186,11 @@
 .card-icons {
     height: 20px;
     float: left
+}
+
+.new-card-style {
+    height: 205px;
+    margin: auto;
 }
 
 .new-card-title {
@@ -218,11 +221,8 @@
     margin-left: 7px
 }
 
-
 .div-end {
     margin-top: 15px;
-    padding-left: 0;
-    padding-right: 0;
     height: 110px
 }
 
@@ -238,11 +238,9 @@
     top: 6px
 }
 
-
 .div-margintop {
     margin-top: 50px
 }
-
 
 .Navbar-header {
     margin-left: 30px
@@ -403,4 +401,233 @@
     color: green;
     font-size: 20px;
     vertical-align: -2px
+}
+
+/* stepper */
+
+body {
+    font-family: sans-serif;
+    display: flex;
+    justify-content: center;
+}
+
+.stepper {
+    display: flex;
+    margin: 50px 0;
+    padding: 0;
+    list-style: none;
+}
+
+.stepper-step {
+    margin: 0 2px;
+    margin-right: 50px
+}
+
+.stepper-step-index {
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    border-radius: 50%;
+    background: #dedede;
+    color: #999;
+    text-align: center;
+    margin-bottom: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.stepper-step-done .stepper-step-index {
+    background: #0062ff;
+    color: #fff;
+}
+
+.stepper-step-current .stepper-step-index {
+    background: #0062ff;
+    color: #fff;
+}
+
+.stepper-step-label {
+    color: #999;
+    font-size: 12px;
+    line-height: 11px;
+}
+
+.stepper-step-done .stepper-step-label {
+    color: #0062ff;
+}
+
+.stepper-step-current .stepper-step-label {
+    color: #0062ff;
+}
+
+.label-place {
+    margin-top: 6px;
+    position: absolute;
+}
+
+.arrow-position {
+    position: absolute;
+    margin-left: 10px;
+    color: black;
+}
+
+.stepper-box {
+    border: 1px solid #ddd;
+    width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 25px;
+    height: 600px
+}
+
+.step-circle {
+    margin-left: -114px
+}
+
+.input-icon {
+    position: relative;
+}
+
+.input-icon-icon {
+    color: grey;
+    text-align: center;
+    margin-left: -6px;
+}
+
+.stepper-position {
+    position: relative
+}
+
+.stepper-index {
+    position: inherit;
+    margin-left: 20px
+}
+
+.stepper-labels {
+    padding-left: 50px;
+    margin-top: -26px
+}
+
+.stepper-header {
+    display: flex;
+    align-items: center
+}
+
+.stepper-header-text {
+    margin-left: 25px
+}
+
+.enabled-icon {
+    color: #0fdb61;
+    height: 45px;
+    width: 45px;
+    margin-left: 15px;
+    margin-top: 20px
+}
+
+.enabled-text {
+    margin-left: -23px
+}
+
+.cancel-button {
+    margin-left: 25px;
+    margin-top: 60px
+}
+
+#save-and-finish-button {
+    margin-top: 60px;
+    margin-left: 77rem;
+    text-decoration: none
+}
+
+#save-and-finish-button2 {
+    margin-top: 60px;
+    margin-left: 68rem;
+    text-decoration: none
+}
+
+.previous-step-button {
+    margin-top: 60px
+}
+
+.next-button {
+    margin-top: 60px
+}
+
+.hr1 {
+    margin-top: -5px;
+    margin-bottom: -20px
+}
+
+.hr2 {
+    margin-top: -25px
+}
+
+.heading-text {
+    text-align: left;
+    margin-left: 25px
+}
+
+.links {
+    text-decoration: none
+}
+
+.name-label {
+    color: red;
+    margin-left: 3px
+}
+
+#name-input {
+    width: 300px
+}
+
+#cross-button {
+    margin-left: 275px;
+    height: 20px;
+    width: 20px;
+    margin-top: -31px;
+    position: absolute;
+    background: transparent;
+    border: none
+}
+
+.first-step {
+    color: white;
+    background: #0062ff
+}
+
+.bottom-hr {
+    margin-bottom: -50px;
+    margin-top: 90px
+}
+
+#invalid-feedback {
+    display: block;
+    width: 100%;
+    margin-top: .25rem;
+    font-size: .875em;
+    color: red;
+}
+
+.spacing-links {
+    margin-top: 20px
+}
+
+#spacing-links-bottom {
+    margin-bottom: 23px
+}
+
+.arrow-icon {
+    margin-right: 10px
+}
+
+#dropdown-button {
+    background-color: white;
+    margin-left: 7px;
+    border-radius: 6px 0 0 6px;
+    height: 33px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between
 }

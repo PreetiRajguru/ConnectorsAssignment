@@ -1,12 +1,12 @@
 import React from 'react';
-import logoImage1 from '../Assets/Images/ovation.jfif';
 import logoImage2 from '../Assets/Images/msd.png';
 import logoImage3 from '../Assets/Images/another.png';
 import logoImage4 from '../Assets/Images/plugin.png';
-import logoImage5 from '../Assets/Images/profilepic.png';
 import { useState } from 'react';
 import "../style.css";
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import Sidebar from './Sidebar';
+import Navbar from './Navbar';
 
 const HomePage = () => {
 
@@ -107,122 +107,11 @@ const HomePage = () => {
 
     <div className="first-div">
 
-      {/* Left Sidebar */}
-      <div className='left-sidebar'>
-
-        {/* Sidebar content */}
-        <div className='sidebar-new'>
-          <i class="bi bi-gear-fill sidebar-icon" id="settings-headers"></i>
-          <span className='settings-header' id="settings-headers">SETTINGS</span>
-        </div>
-
-        <hr className='hr-tag'></hr>
-
-        <ul className='sidebar-list'>
-          <li id="sidebar-headers">PERSONAL</li>
-          <li className='sidebar-content'><b>My Profile</b></li>
-          <li className='sidebar-content'><b>Notifications</b></li>
-
-          <li id="sidebar-headers">ORGANIZATION</li>
-          {['General', 'Roles & Permissions', 'Teams', 'Users'].map((item, index) => (
-            <li className='sidebar-content' key={index}><b>{item}</b></li>
-          ))}
-
-          <li id="sidebar-headers">COMMUNICATIONS</li>
-          {['Channels', 'Quick Replies', 'Templates'].map((item, index) => (
-            <li className='sidebar-content' key={index}><b>{item}</b></li>
-          ))}
-
-          <li id="sidebar-headers">KNOWLEDGE</li>
-          <li className='sidebar-content'><b>Approval Process</b></li>
-          <li className='sidebar-content'><b>Libraries</b></li>
-          <li className='sidebar-content'><b>Templates</b></li>
-
-          <li id="sidebar-headers">OBJECT MANAGEMENT</li>
-          <li className='sidebar-content'><b>Bulk Imports</b></li>
-          <li className='sidebar-content'><b>Card Layouts</b></li>
-          <li className='sidebar-content'><b>Custom Fields</b></li>
-
-          <li className='connectors'>Connectors</li>
-        </ul>
-
-      </div>
+      <Sidebar />
 
       {/* Main Content */}
       <div className='main-section'>
-        <nav className='Navbar'>
-
-          <div>
-            <img src={logoImage1} alt="Logo" className='image-1' />
-            <button className='back-button'>
-              <i class="bi bi-arrow-left icons-alignment"></i>
-              <text className='back-label'>Back</text>
-            </button>
-
-            <span className='vertical-line-back vertical-span'>|</span>
-
-            <b className='Navbar-header'>Connectors</b>
-          </div>
-          <ul className='ul-style'>
-            <div className='button-div'>
-              <button type="button" class="btn btn-outline-primary" id="navbar-buttons">JE</button>
-              <button type="button" class="btn btn-outline-primary" id="navbar-buttons">BH</button>
-              <button type="button" class="btn btn-outline-warning" id="navbar-buttons">SL</button>
-              <button type="button" class="btn btn-outline-warning" id="ro-button">
-                RO
-                <span id="orange-dot"></span>
-              </button>
-              <span id="vertical-line-buttons">|</span>
-
-              <button type="button" class="btn btn-outline-primary" id="call-button">
-                <i class="bi bi-telephone-plus-fill"></i>
-              </button>
-
-
-              <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
-
-                <div class="btn-group" role="group">
-
-                  <button
-                    style={{ backgroundColor: "white", marginLeft: '7px', borderRadius: '6px 0 0 6px', height: '33px', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}
-                    id="btnGroupDrop1"
-                    type="button"
-                    className="btn btn-secondary dropdown-toggle"
-                    data-toggle="dropdown"
-                    aria-haspopup="true"
-                    aria-expanded="false"
-                  >
-                    <i class="bi bi-gear-fill search-color"></i>
-                    <i class="bi bi-caret-down-fill caret-down caret-down"></i>
-                  </button>
-
-
-                  <div class="dropdown-menu drop-color" aria-labelledby="btnGroupDrop1">
-                    <a class="dropdown-item" href="#">Dropdown link</a>
-                    <a class="dropdown-item" href="#">Dropdown link</a>
-                  </div>
-                  <form class="form-inline my-2 my-lg-0">
-                    <div className='search-bar'>
-                      <input class="form-control mr-sm-2" id="search-placeholder" type="search" placeholder="Search" aria-label="Search" />
-                      <i class="bi bi-search search-icon"></i>
-                    </div>
-                  </form>
-                </div>
-              </div>
-
-              <div className='profile-place'>
-                <img
-                  src={logoImage5}
-                  className='profile-imagecircle'
-                  alt="Canvas Logo"
-                />
-                <div
-                  className='green-dot'
-                ></div>
-              </div>
-            </div>
-          </ul>
-        </nav>
+        <Navbar />
 
         <div className='div-background div-margintop'>
           <span className='card-configured-connectors'><b>CONFIGURED CONNECTORS</b></span>
@@ -252,7 +141,9 @@ const HomePage = () => {
 
                         <hr></hr>
                         <p class="card-text card-text" >
-                          <b>{item.name}</b> <br />
+                          <div>
+                            <b>{item.name}</b>
+                          </div>
                           <div className='desc-height'>{item.description}</div>
                         </p>
                         <hr />
@@ -296,10 +187,12 @@ const HomePage = () => {
                           <img src={item.cardicon.logoImage2 || item.cardicon.logoImage3 || item.cardicon.logoImage4} alt="Logo" className='msd-logo' />
                         </div>
                         <span class="card-text new-card-text">{item.cardtitle}</span>
-                        <br />
-                        <Link to="/configure" className="btn btn-outline-secondary" id="configure-button">
-                          Configure
-                        </Link>
+                        <div className='spacing-links'>
+                          <Link to="/configure" className="btn btn-outline-secondary" id="configure-button">
+                            Configure
+                          </Link>
+                        </div>
+
                       </div>
                     </div>
                   </div>)
