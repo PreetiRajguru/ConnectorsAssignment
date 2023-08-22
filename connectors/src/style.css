@@ -582,7 +582,7 @@ body {
 }
 
 #name-input {
-    width: 300px 
+    width: 300px
 }
 
 #cross-button {
@@ -623,4 +623,14 @@ body {
 
 .arrow-icon {
     margin-right: 10px
+}
+
+#dropdown-button {
+    background-color: white;
+    margin-left: 7px;
+    border-radius: 6px 0 0 6px;
+    height: 33px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between
 }

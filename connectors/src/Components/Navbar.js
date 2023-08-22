@@ -37,8 +37,7 @@ const Navbar = () => {
                             <div class="btn-group" role="group">
 
                                 <button
-                                    style={{ backgroundColor: "white", marginLeft: '7px', borderRadius: '6px 0 0 6px', height: '33px', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}
-                                    id="btnGroupDrop1"
+                                    id="dropdown-button"
                                     type="button"
                                     className="btn btn-secondary dropdown-toggle"
                                     data-toggle="dropdown"
