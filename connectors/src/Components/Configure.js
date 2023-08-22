@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 import GeneralDetails from './GeneralDetails';
 import ConnectAccount from './ConnectAccount';
+import SyncMappings from './SyncAndMappings';
 import { Link } from 'react-router-dom';
 
 const steps = [
     { label: 'General Details', component: GeneralDetails },
     { label: 'Connect Account', component: ConnectAccount },
-    { label: 'Sync & Mappings', component: GeneralDetails },
+    { label: 'Sync & Mappings', component: SyncMappings },
     { label: 'Filters', component: GeneralDetails },
     { label: 'Test & enable Connection', component: GeneralDetails },
 ];

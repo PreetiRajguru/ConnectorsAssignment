@@ -633,6 +633,7 @@ body {
 #spacing-links-bottom {
     margin-bottom: 23px
 }
+
 .dropdown {
     cursor: pointer
 }
@@ -718,37 +719,61 @@ body {
 
 .acc-desc {
     margin-top: -16px !important;
-    text-align: left !important 
+    text-align: left !important
 }
 
-.acc-text{
-    color: grey; font-size: 20px
+.acc-text {
+    color: grey;
+    font-size: 20px
 }
 
-.toggle-top{
+.toggle-top {
     margin-top: 20px
 }
 
-.toggle-icon{
+.toggle-icon {
     margin-left: -10px
 }
 
-.toggle-text{
+.toggle-text {
     margin-left: 30px
 }
 
-.toggle-space{
+.toggle-space {
     margin-top: 25px !important
 }
 
-.toggle-button-label{
-    margin-top: 20px; margin-left: 10px
+.toggle-button-label {
+    margin-top: 20px;
+    margin-left: 10px
 }
 
-.orgid-label{
-    margin-top: 15px; margin-left: -80px
+.orgid-label {
+    margin-top: 15px;
+    margin-left: -80px
 }
 
-.orgid-label-color{
+.orgid-label-color {
     color: grey
 }
+
+.apply-to-all {
+    color: #6077e9;
+    text-decoration: none;
+    margin-left: 328px
+}
+
+.customer-label {
+    color: grey
+}
+
+.accordion-style {
+    width: 1200px;
+    margin-top: 20px
+}
+
+.sync-mappings{
+    margin-left: 20px
+}
+
+
