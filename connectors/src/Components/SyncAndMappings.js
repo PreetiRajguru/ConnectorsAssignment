@@ -28,8 +28,8 @@ const SyncMappings = () => {
     };
 
     //creating arrays of state variables
-    const [selectedCrmEntities, setSelectedCrmEntities] = useState(Array(options.crmEntityOptions.length).fill(options.crmEntityOptions[0].value));
-    const [selectedSyncDirections, setSelectedSyncDirections] = useState(Array(options.syncDirectionOptions.length).fill(options.syncDirectionOptions[0].value));
+    const [selectedCrmEntities, setSelectedCrmEntities] = useState(Array(options.crmEntityOptions.length).fill(options.crmEntityOptions[0].label));
+    const [selectedSyncDirections, setSelectedSyncDirections] = useState(Array(options.syncDirectionOptions.length).fill(options.syncDirectionOptions[0].label));
 
     //CRM entity dropdown
     const handleCrmEntityChange = (value, index) => {
@@ -46,7 +46,7 @@ const SyncMappings = () => {
     };
 
     const [selectedSyncDirection, setSelectedSyncDirection] = useState(
-        options.syncDirectionOptions[0].value
+        options.syncDirectionOptions[0].label
     );
     const handleSyncDirectionChanged = (value) => {
         setSelectedSyncDirection(value);
@@ -54,6 +54,9 @@ const SyncMappings = () => {
 
     const handleSubmit = (event) => {
         event.preventDefault();
+    };
+    const handleApplyToAll = () => {
+        alert();
     };
 
     return (
@@ -97,8 +100,10 @@ const SyncMappings = () => {
                                                 </label>
 
                                                 <div className='form-group'>
-                                                    <Link style={{ position: "absolute", marginTop: "5px" }} className='apply-to-all'> <i class="bi bi-arrow-clockwise"></i> Apply to All </Link>
-                                                    <div className="dropdown" style={{ marginTop: "-30px", position: "absolute" }}>
+
+                                                    <Link style={{ position: "absolute", marginTop: "5px" }} onClick={handleApplyToAll} className='apply-to-all'> <i class="bi bi-arrow-clockwise"></i> Apply to All </Link>
+
+                                                    {/* <div className="dropdown" style={{ marginTop: "-30px", position: "absolute" }}>
                                                         <button
                                                             className="btn btn-secondary dropdown-toggle"
                                                             type="button"
@@ -122,7 +127,30 @@ const SyncMappings = () => {
                                                                 </a>
                                                             ))}
                                                         </div>
-                                                    </div>
+                                                    </div> */}
+
+                                                    <select
+                                                        className="form-select"
+                                                        id="syncDirectionOptions"
+                                                        value={selectedSyncDirection}
+                                                        onChange={(e) => handleSyncDirectionChanged(e.target.value)}
+                                                        style={{
+                                                            backgroundColor: "white",
+                                                            color: "black",
+                                                            width: "320px",
+                                                            textAlign: "left"
+                                                        }}
+                                                    >
+                                                        {options.syncDirectionOptions.map((option) => (
+                                                            <option
+                                                                key={option.value}
+                                                                value={option.label}
+                                                            >
+                                                                {option.label}
+                                                            </option>
+                                                        ))}
+                                                    </select>
+
                                                 </div>
                                             </div>
 
@@ -150,6 +178,7 @@ const SyncMappings = () => {
                                                     </div>
 
                                                 </div>
+
                                                 {options.cxmEntityOptions.map((option, index) => (
                                                     <div className='row' key={option.value} style={{ marginTop: "12px" }}>
                                                         <div className='col-sm'>
@@ -159,61 +188,57 @@ const SyncMappings = () => {
                                                         </div>
                                                         <div className='col-sm'>
                                                             <div className='form-group'>
-                                                                <div className="dropdown">
-                                                                    <button
-                                                                        className="btn btn-secondary dropdown-toggle"
-                                                                        type="button"
-                                                                        id={`crmEntityDropdown${index}`} //unique id of each dropdown
-                                                                        data-bs-toggle="dropdown"
-                                                                        aria-haspopup="true"
-                                                                        aria-expanded="false"
-                                                                        style={{ backgroundColor: "white", color: "black", width: "300px", textAlign: "left" }}
-                                                                    >
-                                                                        {selectedCrmEntities[index]}
-                                                                    </button>
-                                                                    <div className="dropdown-menu dropdown-menu-end" aria-labelledby={`crmEntityDropdown${index}`}>
-                                                                        {options.crmEntityOptions.map((crmOption) => (
-                                                                            <a
-                                                                                key={crmOption.value}
-                                                                                className="dropdown-item"
-                                                                                href="#"
-                                                                                style={{ width: "300px" }}
-                                                                                onClick={() => handleCrmEntityChange(crmOption.label, index)}
-                                                                            >
-                                                                                {crmOption.label}
-                                                                            </a>
-                                                                        ))}
-                                                                    </div>
-                                                                </div>
+
+                                                                <select
+                                                                    className="form-select"
+                                                                    id={`crmEntityDropdown${index}`}
+                                                                    value={selectedCrmEntities[index]}
+                                                                    onChange={(e) => handleCrmEntityChange(e.target.value, index)}
+                                                                    style={{
+                                                                        backgroundColor: "white",
+                                                                        color: "black",
+                                                                        width: "320px",
+                                                                        textAlign: "left"
+                                                                    }}
+                                                                >
+                                                                    {options.crmEntityOptions.map((crmOption) => (
+                                                                        <option
+                                                                            key={crmOption.value}
+                                                                            value={crmOption.label}
+                                                                        >
+                                                                            {crmOption.label}
+                                                                        </option>
+                                                                    ))}
+                                                                </select>
+
                                                             </div>
                                                         </div>
                                                         <div className='col-sm'>
                                                             <div className='form-group'>
-                                                                <div className="dropdown">
-                                                                    <button
-                                                                        className="btn btn-secondary dropdown-toggle"
-                                                                        type="button"
-                                                                        id={`syncDirectionDropdown${index}`} // unique ID for each dropdown
-                                                                        data-bs-toggle="dropdown"
-                                                                        aria-haspopup="true"
-                                                                        aria-expanded="false"
-                                                                        style={{ backgroundColor: "white", color: "black", width: "300px", textAlign: "left" }}
-                                                                    >
-                                                                        {selectedSyncDirections[index]}
-                                                                    </button>
-                                                                    <div className="dropdown-menu dropdown-menu-end" aria-labelledby={`syncDirectionDropdown${index}`}>
-                                                                        {options.syncDirectionOptions.map((syncOption) => (
-                                                                            <a
-                                                                                key={syncOption.value}
-                                                                                className="dropdown-item"
-                                                                                href="#"
-                                                                                onClick={() => handleSyncDirectionChange(syncOption.label, index)}
-                                                                            >
-                                                                                {syncOption.label}
-                                                                            </a>
-                                                                        ))}
-                                                                    </div>
-                                                                </div>
+                                                                
+                                                                <select
+                                                                    className="form-select"
+                                                                    id={`syncDirectionDropdown${index}`}
+                                                                    value={selectedSyncDirections[index]}
+                                                                    onChange={(e) => handleSyncDirectionChange(e.target.value, index)}
+                                                                    style={{
+                                                                        backgroundColor: "white",
+                                                                        color: "black",
+                                                                        width: "320px",
+                                                                        textAlign: "left"
+                                                                    }}
+                                                                >
+                                                                    {options.syncDirectionOptions.map((syncOption) => (
+                                                                        <option
+                                                                            key={syncOption.value}
+                                                                            value={syncOption.label}
+                                                                        >
+                                                                            {syncOption.label}
+                                                                            {/* {syncOption?.label} */}
+                                                                        </option>
+                                                                    ))}
+                                                                </select>
+
                                                             </div>
                                                         </div>
                                                     </div>
