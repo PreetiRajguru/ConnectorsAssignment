@@ -10,7 +10,7 @@ const Navbar = () => {
                 <div>
                     <img src={logoImage1} alt="Logo" className='image-1' />
                     <button className='back-button'>
-                        <i class="bi bi-arrow-left icons-alignment"></i>
+                        <i className="bi bi-arrow-left icons-alignment"></i>
                         <text className='back-label'>Back</text>
                     </button>
 
@@ -20,23 +20,23 @@ const Navbar = () => {
                 </div>
                 <ul className='ul-style'>
                     <div className='button-div'>
-                        <button type="button" class="btn btn-outline-primary" id="navbar-buttons">JE</button>
-                        <button type="button" class="btn btn-outline-primary" id="navbar-buttons">BH</button>
-                        <button type="button" class="btn btn-outline-warning" id="navbar-buttons">SL</button>
-                        <button type="button" class="btn btn-outline-warning" id="ro-button">
+                        <button type="button" className="btn btn-outline-primary" id="navbar-buttons">JE</button>
+                        <button type="button" className="btn btn-outline-primary" id="navbar-buttons">BH</button>
+                        <button type="button" className="btn btn-outline-warning" id="navbar-buttons">SL</button>
+                        <button type="button" className="btn btn-outline-warning" id="ro-button">
                             RO
                             <span id="orange-dot"></span>
                         </button>
                         <span id="vertical-line-buttons">|</span>
 
-                        <button type="button" class="btn btn-outline-primary" id="call-button">
-                            <i class="bi bi-telephone-plus-fill"></i>
+                        <button type="button" className="btn btn-outline-primary" id="call-button">
+                            <i className="bi bi-telephone-plus-fill"></i>
                         </button>
 
 
-                        <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+                        <div className="btn-group" role="group" aria-label="Button group with nested dropdown">
 
-                            <div class="btn-group" role="group">
+                            <div className="btn-group" role="group">
 
                                 <button
                                     style={{ backgroundColor: "white", marginLeft: '7px', borderRadius: '6px 0 0 6px', height: '33px', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}
@@ -47,19 +47,19 @@ const Navbar = () => {
                                     aria-haspopup="true"
                                     aria-expanded="false"
                                 >
-                                    <i class="bi bi-gear-fill search-color"></i>
-                                    <i class="bi bi-caret-down-fill caret-down caret-down"></i>
+                                    <i className="bi bi-gear-fill search-color"></i>
+                                    <i className="bi bi-caret-down-fill caret-down caret-down"></i>
                                 </button>
 
 
-                                <div class="dropdown-menu drop-color" aria-labelledby="btnGroupDrop1">
-                                    <a class="dropdown-item" href="#">Dropdown link</a>
-                                    <a class="dropdown-item" href="#">Dropdown link</a>
+                                <div className="dropdown-menu drop-color" aria-labelledby="btnGroupDrop1">
+                                    <a className="dropdown-item" href="#">Dropdown link</a>
+                                    <a className="dropdown-item" href="#">Dropdown link</a>
                                 </div>
-                                <form class="form-inline my-2 my-lg-0">
+                                <form className="form-inline my-2 my-lg-0">
                                     <div className='search-bar'>
-                                    <input class="form-control mr-sm-2" id="search-placeholder" type="search" placeholder="Search" aria-label="Search" />
-                                        <i class="bi bi-search search-icon"></i>
+                                    <input className="form-control mr-sm-2" id="search-placeholder" type="search" placeholder="Search" aria-label="Search" />
+                                        <i className="bi bi-search search-icon"></i>
                                     </div>
                                 </form>
                             </div>

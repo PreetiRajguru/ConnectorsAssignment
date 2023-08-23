@@ -140,7 +140,7 @@ const HomePage = () => {
                         )}
 
                         <hr></hr>
-                        <p class="card-text card-text" >
+                        <p className="card-text card-text" >
                           <div>
                             <b>{item.name}</b>
                           </div>
@@ -176,17 +176,17 @@ const HomePage = () => {
         <div className='div-background'>
           <span className='card-configured-connectors'><b>NEW CONNECTORS</b></span>
 
-          <div class="container card-container">
-            <div class="row">
+          <div className="container card-container">
+            <div className="row">
               {newConnectors.map((item, index) => {
                 return (
                   <div key={index} className="col-sm" id="card-padding">
-                    <div class="card card-border-shadow">
-                      <div class="card-body">
-                        <div class="card-title new-card-title">
+                    <div className="card card-border-shadow">
+                      <div className="card-body">
+                        <div className="card-title new-card-title">
                           <img src={item.cardicon.logoImage2 || item.cardicon.logoImage3 || item.cardicon.logoImage4} alt="Logo" className='msd-logo' />
                         </div>
-                        <span class="card-text new-card-text">{item.cardtitle}</span>
+                        <span className="card-text new-card-text">{item.cardtitle}</span>
                         <div className='spacing-links'>
                           <Link to="/configure" className="btn btn-outline-secondary" id="configure-button">
                             Configure
@@ -203,7 +203,7 @@ const HomePage = () => {
         </div>
 
         <div className='div-background'>
-          <div class="container div-end">
+          <div className="container div-end">
           </div>
         </div>
 

@@ -13,7 +13,7 @@ const steps = [
 ];
 
 function DoneIcon() {
-    return <i class="bi bi-check-circle-fill"></i>;
+    return <i className="bi bi-check-circle-fill"></i>;
 }
 
 function StepContent({ done, index }) {
@@ -114,7 +114,7 @@ function StepperState() {
         <>
             <div className='stepper-header'>
                 <span className='stepper-header-text'><b>New Microsoft Dynamics Connector</b></span>
-                <i class="bi bi-check-circle enabled-icon"></i>
+                <i className="bi bi-check-circle enabled-icon"></i>
                 <span className='enabled-text'>Enabled</span>
             </div>
 
@@ -138,7 +138,7 @@ function StepperState() {
                 <Link to="/" className="btn btn-outline-secondary me-2 cancel-button">Cancel </Link>
                 <Link type="button" className={saveAndFinishClass}>Save & Finish</Link>
                 {current !== 0 && <button onClick={handlePrevious} className='btn btn-outline-secondary me-2 previous-step-button'>Previous Step</button>}
-                <button onClick={handleNext} class="btn btn-primary next-button">Next</button>
+                <button onClick={handleNext} className="btn btn-primary next-button">Next</button>
             </div>
         </>
     );

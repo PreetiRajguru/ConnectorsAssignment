@@ -48,7 +48,7 @@ const Sidebar = () => {
 
         {/* Sidebar content */}
         <div className='sidebar-new'>
-          <i class="bi bi-gear-fill sidebar-icon" id="settings-headers"></i>
+          <i className="bi bi-gear-fill sidebar-icon" id="settings-headers"></i>
           <span className='settings-header' id="settings-headers">SETTINGS</span>
         </div>
 

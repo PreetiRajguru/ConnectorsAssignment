@@ -149,27 +149,27 @@ const ConnectAccount = ({ connectAccount, setConnectAccount, connectAccountError
                             return (
                                 <div key={index}>
 
-                                    <div class="container acc-container">
-                                        <div class="row">
+                                    <div className="container acc-container">
+                                        <div className="row">
 
-                                            <div class="w-100 acc-grid-top"></div>
-                                            <div class="col acc-grid-url">URL</div>
-                                            <div class="col acc-grid.item">{item.url}</div>
+                                            <div className="w-100 acc-grid-top"></div>
+                                            <div className="col acc-grid-url">URL</div>
+                                            <div className="col acc-grid.item">{item.url}</div>
                                             <hr className='acc-grid-hr'></hr>
 
-                                            <div class="w-100 acc-spacing"></div>
-                                            <div class="col acc-item">Account</div>
-                                            <div class="col acc-desc ">{item.acc}</div>
+                                            <div className="w-100 acc-spacing"></div>
+                                            <div className="col acc-item">Account</div>
+                                            <div className="col acc-desc ">{item.acc}</div>
                                             <hr className='acc-grid-hr'></hr>
 
-                                            <div class="w-100 acc-spacing"></div>
-                                            <div class="col acc-item">API Key</div>
-                                            <div class="col acc-desc ">{item.apikey}</div>
+                                            <div className="w-100 acc-spacing"></div>
+                                            <div className="col acc-item">API Key</div>
+                                            <div className="col acc-desc ">{item.apikey}</div>
                                             <hr className='acc-grid-hr'></hr>
 
-                                            <div class="w-100 acc-spacing"></div>
-                                            <div class="col acc-item">API Secret</div>
-                                            <div class="col acc-desc ">{item.apisecret}</div>
+                                            <div className="w-100 acc-spacing"></div>
+                                            <div className="col acc-item">API Secret</div>
+                                            <div className="col acc-desc ">{item.apisecret}</div>
                                         </div>
                                     </div>
                                 </div>)
@@ -206,7 +206,7 @@ const ConnectAccount = ({ connectAccount, setConnectAccount, connectAccountError
                         </label><br />
                         {toggle}
                         <label className="form-check-label toggle-alignment toggle-button-label" htmlFor={`toggleButton-3`}>
-                            Service Provider Mode<i class="bi bi-info-circle info-icon" data-toggle="tooltip" data-placement="right" title="Service Provider Mode"></i>
+                            Service Provider Mode<i className="bi bi-info-circle info-icon" data-toggle="tooltip" data-placement="right" title="Service Provider Mode"></i>
                         </label>
                         {openInput && <div className=" form-switch">
                             <div className="form-group orgid-label">

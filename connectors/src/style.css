@@ -776,4 +776,8 @@ body {
     margin-left: 20px
 }
 
-
+.grey-icon {
+    color: grey;
+    position: absolute;
+    margin-top: 7px;
+}
