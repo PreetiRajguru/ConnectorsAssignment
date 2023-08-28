@@ -1,0 +1,633 @@
+.first-div {
+    display: flex;
+    position: relative
+}
+
+.left-sidebar {
+    width: 165px;
+    background-color: white;
+    padding: 20px;
+    text-align: center;
+    margin-top: 50px;
+    z-index: 1;
+    border-right: 1px solid black
+}
+
+#settings-headers {
+    color: grey;
+    font-size: 12px;
+    text-align: left;
+    margin-right: 20px;
+    width: 10;
+}
+
+.hr-tag {
+    width: 120px
+}
+
+#sidebar-headers {
+    color: grey;
+    text-align: left;
+    font-size: 12px
+}
+
+.sidebar-content {
+    font-size: 12px;
+    text-align: left;
+}
+
+#navbar {
+    background-color: white;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+    border-bottom: 1px solid black
+}
+
+.image-1 {
+    height: 30px;
+    float: left
+}
+
+.back-button {
+    border: none;
+    background: none;
+    padding: 0;
+    cursor: pointer;
+    margin-left: 41px
+}
+
+#navbar-buttons {
+    width: 40px;
+    height: 33px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    margin-right: 5px
+}
+
+.vertical-line-back {
+    color: grey;
+    margin-top: 3px;
+    margin-left: 5px
+}
+
+#vertical-line-buttons {
+    color: grey;
+    margin-top: 3px;
+    margin-left: 9px
+}
+
+.ul-style {
+    list-style: none;
+    display: flex;
+    gap: 20px
+}
+
+.button-div {
+    display: flex;
+    margin-top: 16px
+}
+
+#orange-dot {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    width: 10px;
+    height: 10px;
+    background-color: orange;
+    border-radius: 50%;
+    border: 2px solid white
+}
+
+#call-button {
+    width: 40px;
+    height: 33px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    margin-right: 5px;
+    margin-left: 7px
+}
+
+.profile-div {
+    position: relative;
+    display: inline-block
+}
+
+.profile-image {
+    height: 33px;
+    margin-left: 5px
+}
+
+.profile-greendot {
+    position: 'absolute';
+    bottom: '0';
+    right: '0';
+    width: '9px';
+    height: '9px';
+    background-color: 'green';
+    border-radius: '50%';
+}
+
+.div-background {
+    padding: 20px;
+    background-color: #e3f0f2
+}
+
+.profile-imagecircle {
+    height: 33px;
+    margin-left: 5px
+}
+
+.green-dot {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 9px;
+    height: 9px;
+    background-color: green;
+    border-radius: 50%;
+}
+
+.profile-place {
+    position: relative;
+    display: inline-block
+}
+
+.card-size {
+    width: 230px;
+    margin-left: 0;
+    margin-right: 0;
+    height: 205px;
+    margin: auto
+}
+
+.card-container {
+    margin-top: 15px;
+    padding-left: 0;
+    padding-right: 0
+}
+
+.card-text {
+    font-size: 14px;
+    margin-left: 7px
+}
+
+.card-icons {
+    height: 20px;
+    float: left
+}
+
+.new-card-style {
+    height: 205px;
+    margin: auto;
+}
+
+.new-card-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.msd-logo {
+    height: 70px
+}
+
+.new-card-text {
+    margin-top: 15px;
+    font-size: 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center
+}
+
+#configure-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 32px;
+    width: 200px;
+    text-align: center;
+    margin-left: 7px
+}
+
+.div-end {
+    margin-top: 15px;
+    height: 110px
+}
+
+#search-placeholder {
+    height: 33px;
+    border: 1px solid grey;
+    border-radius: 0 6px 6px 0
+}
+
+.search-icon {
+    position: absolute;
+    right: 5px;
+    top: 6px
+}
+
+.div-margintop {
+    margin-top: 50px
+}
+
+.Navbar-header {
+    margin-left: 30px
+}
+
+.vertical-span {
+    margin-left: 17px
+}
+
+.back-label {
+    margin-left: 6px
+}
+
+.caret-down {
+    margin-left: 9px;
+    margin-Top: 5px
+}
+
+.card-one {
+    margin-left: 43px
+}
+
+.custom-space {
+    margin-left: 5px
+}
+
+.icons-alignment {
+    vertical-align: baseline
+}
+
+.text-alignment {
+    vertical-align: bottom;
+}
+
+.toggle-alignment {
+    vertical-align: text-bottom
+}
+
+#dropdown-style {
+    position: absolute;
+    top: 27%;
+    right: 0;
+    z-index: 1000;
+    display: list-item
+}
+
+.transparent-btn {
+    background-color: transparent;
+    border: none;
+}
+
+.alignmnet {
+    vertical-align: super
+}
+
+.sidebar-list {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.sidebar-list li {
+    margin-bottom: 10px;
+}
+
+.sidebar-new {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px
+}
+
+.settings-header {
+    vertical-align: middle
+}
+
+.container-card {
+    margin-top: 25px
+}
+
+.card-shadow {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
+}
+
+.demo-link {
+    color: black;
+    text-decoration: none;
+    padding: 10px;
+}
+
+.sidebar-icon {
+    vertical-align: middle;
+    margin-right: -3px;
+    font-size: 17px;
+}
+
+.connectors {
+    color: blue;
+    text-align: left
+}
+
+.main-section {
+    flex: 1
+}
+
+#ro-button {
+    width: 40px;
+    height: 33px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    position: relative
+}
+
+.search {
+    background-color: white;
+    margin-left: 7px;
+    border-radius: 6px 0 0 6px;
+    height: 33px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between
+}
+
+.drop-color {
+    background-color: grey
+}
+
+.search-bar {
+    position: relative
+}
+
+#card-padding {
+    padding: 6px
+}
+
+.card-border-shadow {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
+}
+
+.desc-height {
+    height: 40px
+}
+
+.link {
+    vertical-align: -7px
+}
+
+.search-color {
+    color: grey
+}
+
+.caret-down {
+    color: grey;
+    font-size: 12px;
+}
+
+.green-color {
+    color: green;
+    font-size: 20px;
+    vertical-align: -2px
+}
+
+/* stepper */
+
+body {
+    font-family: sans-serif;
+    display: flex;
+    justify-content: center;
+}
+
+.stepper {
+    display: flex;
+    margin: 50px 0;
+    padding: 0;
+    list-style: none;
+}
+
+.stepper-step {
+    margin: 0 2px;
+    margin-right: 50px
+}
+
+.stepper-step-index {
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    border-radius: 50%;
+    background: #dedede;
+    color: #999;
+    text-align: center;
+    margin-bottom: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.stepper-step-done .stepper-step-index {
+    background: #0062ff;
+    color: #fff;
+}
+
+.stepper-step-current .stepper-step-index {
+    background: #0062ff;
+    color: #fff;
+}
+
+.stepper-step-label {
+    color: #999;
+    font-size: 12px;
+    line-height: 11px;
+}
+
+.stepper-step-done .stepper-step-label {
+    color: #0062ff;
+}
+
+.stepper-step-current .stepper-step-label {
+    color: #0062ff;
+}
+
+.label-place {
+    margin-top: 6px;
+    position: absolute;
+}
+
+.arrow-position {
+    position: absolute;
+    margin-left: 10px;
+    color: black;
+}
+
+.stepper-box {
+    border: 1px solid #ddd;
+    width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 25px;
+    height: 600px
+}
+
+.step-circle {
+    margin-left: -114px
+}
+
+.input-icon {
+    position: relative;
+}
+
+.input-icon-icon {
+    color: grey;
+    text-align: center;
+    margin-left: -6px;
+}
+
+.stepper-position {
+    position: relative
+}
+
+.stepper-index {
+    position: inherit;
+    margin-left: 20px
+}
+
+.stepper-labels {
+    padding-left: 50px;
+    margin-top: -26px
+}
+
+.stepper-header {
+    display: flex;
+    align-items: center
+}
+
+.stepper-header-text {
+    margin-left: 25px
+}
+
+.enabled-icon {
+    color: #0fdb61;
+    height: 45px;
+    width: 45px;
+    margin-left: 15px;
+    margin-top: 20px
+}
+
+.enabled-text {
+    margin-left: -23px
+}
+
+.cancel-button {
+    margin-left: 25px;
+    margin-top: 60px
+}
+
+#save-and-finish-button {
+    margin-top: 60px;
+    margin-left: 77rem;
+    text-decoration: none
+}
+
+#save-and-finish-button2 {
+    margin-top: 60px;
+    margin-left: 68rem;
+    text-decoration: none
+}
+
+.previous-step-button {
+    margin-top: 60px
+}
+
+.next-button {
+    margin-top: 60px
+}
+
+.hr1 {
+    margin-top: -5px;
+    margin-bottom: -20px
+}
+
+.hr2 {
+    margin-top: -25px
+}
+
+.heading-text {
+    text-align: left;
+    margin-left: 25px
+}
+
+.links {
+    text-decoration: none
+}
+
+.name-label {
+    color: red;
+    margin-left: 3px
+}
+
+#name-input {
+    width: 300px
+}
+
+#cross-button {
+    margin-left: 275px;
+    height: 20px;
+    width: 20px;
+    margin-top: -31px;
+    position: absolute;
+    background: transparent;
+    border: none
+}
+
+.first-step {
+    color: white;
+    background: #0062ff
+}
+
+.bottom-hr {
+    margin-bottom: -50px;
+    margin-top: 90px
+}
+
+#invalid-feedback {
+    display: block;
+    width: 100%;
+    margin-top: .25rem;
+    font-size: .875em;
+    color: red;
+}
+
+.spacing-links {
+    margin-top: 20px
+}
+
+#spacing-links-bottom {
+    margin-bottom: 23px
+}
+
+.arrow-icon {
+    margin-right: 10px
+}
+
+#dropdown-button {
+    background-color: white;
+    margin-left: 7px;
+    border-radius: 6px 0 0 6px;
+    height: 33px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between
+}
