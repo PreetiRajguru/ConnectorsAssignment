@@ -4,7 +4,7 @@ const SyncMappings = () => {
 
   const mappingData = [
     {
-      cxmEntityName: 'Customer',
+      cxmEntityName: 'Customer/Location',
       crmEntityName: 'Product'
     },
     {
@@ -19,14 +19,14 @@ const SyncMappings = () => {
 
   const cxmEntityField = [
     {
-      entityName: 'Customer',
+      entityName: 'Customer/Location',
       entityField: [
-        { value: 'name', label: 'Customer Name', isCustomField: false },
-        { value: 'nameLegal', label: 'Customer Name Legal', isCustomField: false },
-        { value: 'street1', label: 'Street Address 1', isCustomField: false },
-        { value: 'street2', label: 'Street Address 2', isCustomField: false },
-        { value: 'city', label: 'City', isCustomField: false },
-        { value: 'state', label: 'State', isCustomField: true },
+        { value: 'name', label: 'Customer Name' },
+        { value: 'nameLegal', label: 'Customer Name Legal' },
+        { value: 'street1', label: 'Street Address 1' },
+        { value: 'street2', label: 'Street Address 2' },
+        { value: 'city', label: 'City' },
+        { value: 'state', label: 'State' },
       ],
     },
     {
@@ -84,72 +84,176 @@ const SyncMappings = () => {
   ];
 
   const syncOptions = [
-
     { value: 'OvationCXM <-> Microsoft Dynamics', label: 'OvationCXM <-> Microsoft Dynamics' },
     { value: 'OvationCXM -> Microsoft Dynamics', label: 'OvationCXM -> Microsoft Dynamics' },
     { value: 'OvationCXM <- Microsoft Dynamics', label: 'OvationCXM <- Microsoft Dynamics' },
     { value: 'Do Not Sync', label: 'Do Not Sync' },
-    ,
   ];
 
   const [formData, setFormData] = useState(mappingData.map((e) => ({
-
     cxmEntityName: e.cxmEntityName,
     crmEntityName: e.crmEntityName,
-    syncDirection: '', //for apply to all option and display the select options by mapping another object in the select
+    syncDirection: '',
     mappings: cxmEntityField.filter(s => s.entityName == e.cxmEntityName)[0].entityField.map((cxm) => ({
       cxmFieldLabel: cxm.label,
       cxmFieldName: cxm.value,
-      crmFieldLabel: '', //update this using handle onchange function
-      crmFieldName: '', //update this using handle onchange function
-      syncDirection: '', //update this using handle onchange function and display the select options by mapping another object in the select
+      crmFieldLabel: '',
+      crmFieldName: '',
+      syncDirection: '',
       crmField: crmEntityField.filter(s => s.entityName == e.crmEntityName)[0]?.entityField,
       cxmField: cxmEntityField.filter(s => s.entityName == e.cxmEntityName)[0]?.entityField,
-      isCustomField: cxm.isCustomField //actual custom mapping row /section
-    }))
-
+      isCustomField: cxm.isCustomField,
+    })),
   })));
 
+  const addCustomRow = (index) => {
+    const selectedMapping = formData[index];
+    const crmEntityName = selectedMapping.crmEntityName;
+    const cxmEntityName = selectedMapping.cxmEntityName;
 
-  // Apply To All button
-  const handleApplyToAll = (mappingIndex) => {
-    alert(mappingIndex);
-  }
+    const crmEntity = crmEntityField.find((entity) => entity.entityName === crmEntityName);
+    const cxmEntity = cxmEntityField.find((entity) => entity.entityName === cxmEntityName);
 
-  //add new custom mapping
-  const [customRows, setCustomRows] = useState([]);
-
-  // Function to add a new custom row
-  const addCustomRow = () => {
     const newRow = {
-      // Set default values for your custom row fields
-      fieldName: '',
-      fieldValue: '',
+      cxmFieldLabel: '',
+      cxmFieldName: '',
+      crmFieldLabel: '',
+      crmFieldName: '',
+      syncDirection: '',
+      crmField: crmEntity ? crmEntity.entityField.map((field) => ({ label: field.label, value: field.value })) : [],
+      cxmField: cxmEntity ? cxmEntity.entityField.map((field) => ({ label: field.label, value: field.value })) : [],
+      isCustomField: true,
     };
 
-    // Add the new row to the customRows array
-    setCustomRows([...customRows, newRow]);
+    const updatedFormData = [...formData];
+    updatedFormData[index].mappings.push(newRow);
+    setFormData(updatedFormData);
   };
 
-  // Function to handle changes in the field name
-  const handleFieldNameChange = (e, index) => {
-    const updatedCustomRows = [...customRows];
-    updatedCustomRows[index].fieldName = e.target.value;
-    setCustomRows(updatedCustomRows);
+  const handleApplyToAll = (mappingIndex) => {
+    const selectedSyncDirection = formData[mappingIndex].syncDirection;
+    const updatedFormData = formData.map((mapping, index) => {
+      if (index === mappingIndex) {
+        const updatedMappings = mapping.mappings.map((m) => ({
+          ...m,
+          syncDirection: selectedSyncDirection,
+        }));
+
+        return { ...mapping, mappings: updatedMappings };
+      } else {
+        return mapping;
+      }
+    });
+    setFormData([...updatedFormData]);
   };
 
-  // Function to handle changes in the field value
-  const handleFieldValueChange = (e, index) => {
-    const updatedCustomRows = [...customRows];
-    updatedCustomRows[index].fieldValue = e.target.value;
-    setCustomRows(updatedCustomRows);
+  console.log(formData);
+
+  const handleCustomSyncDirectionChange = (index, innerIndex, selectedSyncDirection) => {
+    const updatedFormData = [...formData];
+    const mapping = updatedFormData[index];
+    const selectedField = mapping.mappings.filter(s => s.isCustomField)[innerIndex];
+    selectedField.syncDirection = selectedSyncDirection;
+    updatedFormData[index] = mapping;
+    setFormData(updatedFormData);
   };
 
-  // Function to delete a custom row
-  const deleteCustomRow = (index) => {
-    const updatedCustomRows = [...customRows];
-    updatedCustomRows.splice(index, 1);
-    setCustomRows(updatedCustomRows);
+  const handleCustomCxmFieldChange = (index, innerIndex, value) => {
+    const updatedFormData = [...formData];
+    const mapping = updatedFormData[index];
+    const selectedField = mapping.mappings.filter(s => s.isCustomField)[innerIndex];
+
+    // label for cxmFieldName in the cxmEntityField array
+    const cxmEntity = cxmEntityField.find(entity => entity.entityName === mapping.cxmEntityName);
+    if (cxmEntity) {
+      const cxmField = cxmEntity.entityField.find(field => field.value === value);
+      if (cxmField) {
+        selectedField.cxmFieldName = value;
+        selectedField.cxmFieldLabel = cxmField.label;
+      } else {
+        // when the selected cxmFieldName is not found
+        selectedField.cxmFieldName = '';
+        selectedField.cxmFieldLabel = '';
+      }
+    } else {
+      // when the cxmEntity is not found
+      selectedField.cxmFieldName = '';
+      selectedField.cxmFieldLabel = '';
+    }
+    updatedFormData[index] = mapping;
+    setFormData(updatedFormData);
+  };
+
+  const handleCustomCrmFieldChange = (index, innerIndex, value) => {
+    const updatedFormData = [...formData];
+    const mapping = updatedFormData[index];
+    const selectedField = mapping.mappings.filter(s => s.isCustomField)[innerIndex];
+
+    // label for crmFieldName in the crmEntityField array
+    const crmEntity = crmEntityField.find(entity => entity.entityName === mapping.crmEntityName);
+    if (crmEntity) {
+      const crmField = crmEntity.entityField.find(field => field.value === value);
+      if (crmField) {
+        selectedField.crmFieldName = value;
+        selectedField.crmFieldLabel = crmField.label;
+      } else {
+        // when the selected crmFieldName is not found
+        selectedField.crmFieldName = '';
+        selectedField.crmFieldLabel = '';
+      }
+    } else {
+      //  when the crmEntity is not found
+      selectedField.crmFieldName = '';
+      selectedField.crmFieldLabel = '';
+    }
+    updatedFormData[index] = mapping;
+    setFormData(updatedFormData);
+  };
+
+  // delete a custom row
+  const deleteCustomRow = (index, innerIndex) => {
+    const updatedFormData = [...formData];
+    const mapping = updatedFormData[index];
+
+    if (mapping && mapping.mappings) {
+      const customMappings = mapping.mappings.filter((m) => m.isCustomField);
+
+      const customIndexToDelete = mapping.mappings.indexOf(customMappings[innerIndex]);
+      mapping.mappings.splice(customIndexToDelete, 1);
+      setFormData(updatedFormData);
+    }
+  };
+
+  const handleSyncDirectionChanged = (index, selectedSyncDirection) => {
+    const updatedFormData = [...formData];
+    updatedFormData[index].syncDirection = selectedSyncDirection;
+    setFormData(updatedFormData);
+  };
+
+  const handleSyncDirectionChange = (mappingIndex, innerIndex, selectedSyncDirection) => {
+    const updatedFormData = [...formData];
+    updatedFormData[mappingIndex].mappings[innerIndex].syncDirection = selectedSyncDirection;
+    setFormData(updatedFormData);
+  };
+
+  const handleCrmChange = (mappingIndex, innerIndex, selectedCrm) => {
+    const updatedFormData = [...formData];
+    const crmEntityName = updatedFormData[mappingIndex].crmEntityName;
+
+    const selectedCrmField = crmEntityField
+      .find(entity => entity.entityName === crmEntityName)
+      .entityField.find(field => field.label === selectedCrm);
+
+    if (selectedCrmField) {
+      updatedFormData[mappingIndex].mappings[innerIndex].crmFieldName = selectedCrmField.value;
+      updatedFormData[mappingIndex].mappings[innerIndex].crmFieldLabel = selectedCrmField.label;
+    } else {
+      //when the selectedCrm is not found
+      updatedFormData[mappingIndex].mappings[innerIndex].crmFieldName = '';
+      updatedFormData[mappingIndex].mappings[innerIndex].crmFieldLabel = '';
+    }
+
+    setFormData(updatedFormData);
   };
 
   const handleSubmit = (event) => {
@@ -162,7 +266,7 @@ const SyncMappings = () => {
         <div>
           <span>Choose the items you would like to sync and their direction</span>
 
-          <div style={{ marginLeft: '-23px' }}>
+          <div className='accordion-place'>
 
             {formData.map((mapping, index) => (
               <div className='form-check' key={index}>
@@ -182,7 +286,7 @@ const SyncMappings = () => {
                         <div className='form-check'>
                           <input className='form-check-input' type='checkbox' value='' id={`flexCheckDefault${index}`} />
                           <label className='form-check-label' htmlFor={`flexCheckDefault${index}`}>
-                            {mapping.cxmEntityName} / {mapping.crmEntityName}
+                            {mapping.cxmEntityName}
                           </label>
                         </div>
                       </button>
@@ -204,24 +308,18 @@ const SyncMappings = () => {
                           <div className='form-group'>
 
                             <button
-                              style={{ position: "absolute", marginTop: "5px", color: 'blue', border: 'none', background: 'none' }}
                               onClick={() => handleApplyToAll(index)}
-                              className='apply-to-all'
+                              className='apply-to-all apply-to-all-button'
                             >
-                              <i class="bi bi-arrow-clockwise"></i> Apply to All
+                              <i className="bi bi-arrow-clockwise"></i> Apply to All
                             </button>
 
+
                             <select
-                              className="form-select"
+                              className="form-select apply-all-select"
                               id={`syncDirectionOptions${index}`}
-                              // value={data.selectedSyncDirection}
-                              // onChange={(e) => handleSyncDirectionChanged(e.target.value)}
-                              style={{
-                                backgroundColor: "white",
-                                color: "black",
-                                width: "320px",
-                                textAlign: "left"
-                              }}
+                              value={mapping.syncDirection}
+                              onChange={(e) => handleSyncDirectionChanged(index, e.target.value)}
                             >
                               {syncOptions && syncOptions.map((option) => (
                                 <option
@@ -236,7 +334,7 @@ const SyncMappings = () => {
                           </div>
                         </div>
 
-                        <div className="container" style={{ marginTop: "53px", marginLeft: "-10px" }}>
+                        <div className="container accordion-row ">
 
                           <div className="row">
 
@@ -260,103 +358,48 @@ const SyncMappings = () => {
 
                           </div>
 
+                          {mapping.mappings
+                            .filter((c) => !c.isCustomField)
+                            .map((cxmData, innerIndex) => (
 
-                          {mapping.mappings.map((cxmData, index) => (
+                              <div className='row' key={cxmData.value} id="cxm-row">
 
-                            <div className='row' key={cxmData.value} style={{ marginTop: "12px" }}>
-
-                              <div className='col-sm'>
-                                <label htmlFor={`name${index}`} className='form-label customer-label' style={{ color: "black" }}>
-                                  {cxmData.cxmFieldLabel}
-                                </label>
-                              </div>
-
-                              <div className='col-sm'>
-                                <div className='form-group'>
-                                  <select
-                                    className="form-select"
-                                    id={`crmEntityDropdown${index}`}
-                                    // value={customMappings[index].customCrmEntities[index]}
-                                    // onChange={(e) => handleCrmEntityChange(e.target.value, index, index)}
-                                    style={{
-                                      backgroundColor: "white",
-                                      color: "black",
-                                      width: "320px",
-                                      textAlign: "left"
-                                    }}
-                                  >
-                                    {cxmData.crmField.map((a) => (
-                                      <option
-                                        key={a.value}
-                                        value={a.label}
-                                      >
-                                        {a.label}
-                                      </option>
-                                    ))}
-                                  </select>
-
+                                <div className='col-sm'>
+                                  <label htmlFor={`name${index}`} className='form-label customer-label cxm-label'>
+                                    {cxmData.cxmFieldLabel}
+                                  </label>
                                 </div>
-                              </div>
 
-                              <div className='col-sm'>
-                                <div className='form-group'>
-
-                                  <select
-                                    className="form-select"
-                                    id={`syncDirectionDropdown${index}`}
-                                    // value={customMappings[mappingIndex].customSyncDirections[index]}
-                                    // onChange={(e) => handleSyncDirectionChange(e.target.value, index, mappingIndex)}
-                                    style={{
-                                      backgroundColor: "white",
-                                      color: "black",
-                                      width: "320px",
-                                      textAlign: "left"
-                                    }}
-                                  >
-                                    {syncOptions && syncOptions.map((option) => (
-                                      <option
-                                        key={option.value}
-                                        value={option.label}
-                                      >
-                                        {option.label}
-                                      </option>
-                                    ))}
-                                  </select>
-                                </div>
-                              </div>
-
-                            </div>
-
-                          ))}
-
-                        </div>
-
-
-                        {/* custom mappings */}
-                        <div>
-                          <hr />
-                          <span>CUSTOM FIELD MAPPINGS</span>
-                          <br />
-
-                          {customRows.map((row, index) => (
-                            <div key={index}>
-
-                              <div className="container" style={{ marginTop: "12px" }}>
-                                <div className="row">
-                                  <div className="col-sm" style={{ marginLeft: "-11px", marginRight: "46px" }}>
+                                <div className='col-sm'>
+                                  <div className='form-group'>
                                     <select
-                                      className="form-select"
-                                      id={`cxmOptionsSelect${index}`}
-                                      onChange={(e) => handleFieldNameChange(e, index)}
-                                      style={{
-                                        backgroundColor: "white",
-                                        color: "black",
-                                        width: "320px",
-                                        textAlign: "left"
-                                      }}
+                                      className="form-select select-fields"
+                                      id={`crmEntityDropdown${index}`}
+                                      onChange={(e) => handleCrmChange(index, innerIndex, e.target.value)}
                                     >
-                                      <option value="">Select an OvationCXM Field </option>
-                                      {mapping.mappings[0]?.cxmField.map((option) => (
+                                      {cxmData.crmField.map((a) => (
+                                        <option
+                                          key={a.value}
+                                          value={a.label}
+                                        >
+                                          {a.label}
+                                        </option>
+                                      ))}
+                                    </select>
+
+                                  </div>
+                                </div>
+
+                                <div className='col-sm'>
+                                  <div className='form-group'>
+
+                                    <select
+                                      className="form-select select-fields"
+                                      id={`syncDirectionDropdown${index}`}
+                                      value={cxmData.syncDirection}
+                                      onChange={(e) => handleSyncDirectionChange(index, innerIndex, e.target.value)}
+                                    >
+                                      {syncOptions && syncOptions.map((option) => (
                                         <option
                                           key={option.value}
                                           value={option.label}
@@ -365,77 +408,99 @@ const SyncMappings = () => {
                                         </option>
                                       ))}
                                     </select>
-
-                                  </div>
-                                  <div className="col-sm" style={{ marginRight: "42px" }}>
-                                    <div className='form-group'>
-                                      <select
-                                        className="form-select"
-                                        id={`crmOptionsSelect${index}`}
-                                        // value={customMappings[mappingIndex].customCrmEntities[index]}
-                                        onChange={(e) => handleFieldNameChange(e, index)}
-                                        // onChange={(e) => handleCustomCrmEntityChange(e.target.value, index, mappingIndex)}
-                                        style={{
-                                          backgroundColor: "white",
-                                          color: "black",
-                                          width: "320px",
-                                          textAlign: "left"
-                                        }}
-                                      >
-                                        <option value="">Select an MS Dynamics Field</option>
-                                        {mapping.mappings[0]?.crmField.map((option) => (
-                                          <option
-                                            key={option.value}
-                                            value={option.label}
-                                          >
-                                            {option.label}
-                                          </option>
-                                        ))}
-                                      </select>
-                                    </div>
-                                  </div>
-                                  <div className="col-sm" style={{ marginTop: "42px", marginTop: "0px" }}>
-                                    <div className='form-group'>
-                                      <select
-                                        className="form-select"
-                                        id={`syncOptionsSelect${index}`}
-                                        // value={customMappings[mappingIndex].customSyncDirections[index]}
-                                        onChange={(e) => handleFieldNameChange(e, index)}
-                                        // onChange={(e) => handleCustomSyncDirectionChange(e.target.value, index, mappingIndex)}
-                                        style={{
-                                          backgroundColor: "white",
-                                          color: "black",
-                                          width: "320px",
-                                          textAlign: "left"
-                                        }}
-                                      >
-                                        {syncOptions && syncOptions.map((option) => (
-                                          <option
-                                            key={option.value}
-                                            value={option.label}
-                                          >
-                                            {option.label}
-                                          </option>
-                                        ))}
-                                      </select>
-                                    </div>
-                                  </div>
-                                  <div className="col-sm">
-                                    <i class="bi bi-x-circle-fill grey-icon" onClick={() => deleteCustomRow(index)} style={{ cursor: "pointer" }}></i>
                                   </div>
                                 </div>
                               </div>
+                            ))}
+                        </div>
 
-                            </div>
-                          ))}
+                        {/* custom mappings */}
+                        <div>
+                          <hr />
+                          <span>CUSTOM FIELD MAPPINGS</span>
+                          <br />
 
-                          <button style={{ color: 'blue', border: 'none', background: 'none', marginTop: "10px" }} onClick={addCustomRow}>
+                          {mapping.mappings
+                            .filter((c) => c.isCustomField)
+                            .map((cxmData, innerIndex) => (
+                              <div key={innerIndex}>
+
+                                <div className="container custom-mapping-container">
+                                  <div className="row">
+                                    <div className="col-sm custom-mapping-row">
+                                      <select
+                                        className="form-select select-fields"
+                                        id={`cxmEntityDropdown${index}`}
+                                        value={cxmData.cxmFieldName}
+                                        onChange={(e) => handleCustomCxmFieldChange(index, innerIndex, e.target.value)}
+                                      >
+                                        <option value="">Select an OvationCXM Field </option>
+                                        {cxmData.cxmField.map((option) => (
+                                          <option
+                                            key={option.value}
+                                            value={option.value}
+                                          >
+                                            {option.label}
+                                          </option>
+                                        ))}
+                                      </select>
+
+                                    </div>
+                                    <div className="col-sm custom-crm-select">
+                                      <div className='form-group custom-crm-place'>
+                                        <select
+                                          className="form-select select-fields"
+                                          id={`crmEntityDropdown${index}`}
+                                          value={cxmData.crmFieldName}
+                                          onChange={(e) => handleCustomCrmFieldChange(index, innerIndex, e.target.value)}
+                                        >
+                                          <option value="">Select an MS Dynamics Field</option>
+                                          {cxmData.crmField.map((option) => (
+                                            <option
+                                              key={option.value}
+                                              value={option.value}
+                                            >
+                                              {option.label}
+                                            </option>
+                                          ))}
+                                        </select>
+                                      </div>
+                                    </div>
+                                    <div className="col-sm custom-sync-select">
+                                      <div className='form-group'>
+                                        <select
+                                          className="form-select select-fields"
+                                          id={`syncOptionsSelect${innerIndex}`}
+                                          value={cxmData.syncDirection}
+                                          onChange={(e) => handleCustomSyncDirectionChange(index, innerIndex, e.target.value)}
+                                        >
+                                          {syncOptions && syncOptions.map((option) => (
+                                            <option
+                                              key={option.value}
+                                              value={option.label}
+                                            >
+                                              {option.label}
+                                            </option>
+                                          ))}
+                                        </select>
+
+                                      </div>
+                                    </div>
+                                    <div className="col-sm">
+                                      <i class="bi bi-x-circle-fill grey-icon delete-row"
+                                        onClick={() => deleteCustomRow(index, innerIndex)}
+                                      ></i>
+                                    </div>
+                                  </div>
+                                </div>
+
+                              </div>
+                            ))}
+                          <button className='add-custom-mapping' onClick={() => addCustomRow(index)}>
                             <i className="bi bi-plus"></i>
                             &nbsp;Add Custom Mapping
                           </button>
-
                         </div>
-
                       </div>
                     </div>
                   </div>
@@ -449,4 +514,4 @@ const SyncMappings = () => {
   );
 };
 
-export default SyncMappings;
+export default SyncMappings;  

@@ -772,7 +772,7 @@ body {
     margin-top: 20px
 }
 
-.sync-mappings{
+.sync-mappings {
     margin-left: 20px
 }
 
@@ -780,4 +780,78 @@ body {
     color: grey;
     position: absolute;
     margin-top: 7px;
+}
+
+.accordion-place {
+    margin-left: -23px
+}
+
+.apply-to-all-button {
+    position: absolute;
+    margin-top: 5px;
+    color: blue;
+    border: none;
+    background: none
+}
+
+.apply-all-select {
+    background-color: white;
+    color: black;
+    width: 320px !important;
+    text-align: left
+}
+
+.accordion-row {
+    margin-top: 53px;
+    margin-left: -10px
+}
+
+#cxm-row {
+    margin-top: 12px !important
+}
+
+.cxm-label {
+    color: black
+}
+
+.select-fields {
+    background-color: white;
+    color: black;
+    text-align: left
+}
+
+.form-select.select-fields {
+    width: 320px;
+}
+
+.custom-mapping-container {
+    margin-top: 12px
+}
+
+.custom-mapping-row {
+    margin-left: -11px;
+    margin-right: 46px
+}
+
+.add-custom-mapping {
+    color: blue;
+    border: none;
+    background: none;
+    margin-top: 10px
+}
+
+.delete-row {
+    cursor: pointer
+}
+
+.custom-crm-select {
+    margin-right: 42px
+}
+
+.custom-sync-select {
+    margin-top: 0px
+}
+
+.custom-crm-place {
+    margin-left: 7px
 }
