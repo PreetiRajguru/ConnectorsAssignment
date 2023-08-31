@@ -1,12 +1,11 @@
 import React from 'react';
 import logoImage5 from '../Assets/Images/profilepic.png';
-import logoImage1 from '../Assets/Images/ovation.jfif';
+import logoImage1 from '../Assets/Images/ovation.png';
 
 const Navbar = () => {
     return (
         <>
-            <nav className='Navbar'>
-
+            <nav id="navbar">
                 <div>
                     <img src={logoImage1} alt="Logo" className='image-1' />
                     <button className='back-button'>
@@ -33,14 +32,12 @@ const Navbar = () => {
                             <i class="bi bi-telephone-plus-fill"></i>
                         </button>
 
-
                         <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
 
                             <div class="btn-group" role="group">
 
                                 <button
-                                    style={{ backgroundColor: "white", marginLeft: '7px', borderRadius: '6px 0 0 6px', height: '33px', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}
-                                    id="btnGroupDrop1"
+                                    id="dropdown-button"
                                     type="button"
                                     className="btn btn-secondary dropdown-toggle"
                                     data-toggle="dropdown"
@@ -50,7 +47,6 @@ const Navbar = () => {
                                     <i class="bi bi-gear-fill search-color"></i>
                                     <i class="bi bi-caret-down-fill caret-down caret-down"></i>
                                 </button>
-
 
                                 <div class="dropdown-menu drop-color" aria-labelledby="btnGroupDrop1">
                                     <a class="dropdown-item" href="#">Dropdown link</a>
@@ -64,7 +60,6 @@ const Navbar = () => {
                                 </form>
                             </div>
                         </div>
-
                         <div className='profile-place'>
                             <img
                                 src={logoImage5}
@@ -82,4 +77,4 @@ const Navbar = () => {
     )
 }
 
-export default Navbar
+export default Navbar;

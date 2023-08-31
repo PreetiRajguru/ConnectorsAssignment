@@ -36,7 +36,7 @@
     text-align: left;
 }
 
-.Navbar {
+#navbar {
     background-color: white;
     height: 50px;
     display: flex;
@@ -144,7 +144,6 @@
     background-color: #e3f0f2
 }
 
-
 .profile-imagecircle {
     height: 33px;
     margin-left: 5px
@@ -179,7 +178,6 @@
     padding-right: 0
 }
 
-
 .card-text {
     font-size: 14px;
     margin-left: 7px
@@ -193,7 +191,6 @@
 .new-card-style {
     height: 205px;
     margin: auto;
-    margin-left: 0px
 }
 
 .new-card-title {
@@ -224,11 +221,8 @@
     margin-left: 7px
 }
 
-
 .div-end {
     margin-top: 15px;
-    padding-left: 0;
-    padding-right: 0;
     height: 110px
 }
 
@@ -244,11 +238,9 @@
     top: 6px
 }
 
-
 .div-margintop {
     margin-top: 50px
 }
-
 
 .Navbar-header {
     margin-left: 30px
@@ -469,7 +461,6 @@ body {
     color: #0062ff;
 }
 
-
 .label-place {
     margin-top: 6px;
     position: absolute;
@@ -499,11 +490,6 @@ body {
 }
 
 .input-icon-icon {
-    /* position: absolute; */
-    /* padding-left: 0px; */
-    /* top: 50%; */
-    /* transform: translateY(-50%); */
-    /* pointer-events: none; */
     color: grey;
     text-align: center;
     margin-left: -6px;
@@ -549,16 +535,16 @@ body {
     margin-top: 60px
 }
 
-.save-and-finish-button {
+#save-and-finish-button {
     margin-top: 60px;
     margin-left: 77rem;
-    text-decoration: none !important
+    text-decoration: none
 }
 
-.save-and-finish-button2 {
+#save-and-finish-button2 {
     margin-top: 60px;
     margin-left: 68rem;
-    text-decoration: none !important
+    text-decoration: none
 }
 
 .previous-step-button {
@@ -592,21 +578,19 @@ body {
     margin-left: 3px
 }
 
-.name-input {
-    width: 300px !important
+#name-input {
+    width: 300px
 }
 
-
-.cross-button {
-    margin-left: 275px !important;
-    height: 20px !important;
-    width: 20px !important;
-    margin-top: -31px !important;
-    position: absolute !important;
-    background: transparent !important;
-    border: none !important
+#cross-button {
+    margin-left: 275px;
+    height: 20px;
+    width: 20px;
+    margin-top: -31px;
+    position: absolute;
+    background: transparent;
+    border: none
 }
-
 
 .first-step {
     color: white;
@@ -618,8 +602,8 @@ body {
     margin-top: 90px
 }
 
-.invalid-feedback {
-    display: block !important;
+#invalid-feedback {
+    display: block;
     width: 100%;
     margin-top: .25rem;
     font-size: .875em;
@@ -751,4 +735,19 @@ body {
 
 .orgid-label-color{
     color: grey
+}
+
+
+.arrow-icon {
+    margin-right: 10px
+}
+
+#dropdown-button {
+    background-color: white;
+    margin-left: 7px;
+    border-radius: 6px 0 0 6px;
+    height: 33px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between
 }

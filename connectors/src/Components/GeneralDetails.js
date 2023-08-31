@@ -58,15 +58,15 @@ const GeneralDetails = ({ generalDetails, setGeneralDetails, generalDetailsError
                     <div className="input-icon">
                         <input
                             type="text"
-                            className="form-control name-input"
-                            id="name"
+                            className="form-control "
+                            id="name-input"
                             style={inputStyle}
                             placeholder="My New Connector"
                             value={generalDetails.name}
                             onChange={(e) => getInput(e)}
                             required
                         />
-                        <button onClick={handleClearName} className='cross-button'>
+                        <button onClick={handleClearName} id="cross-button">
                             <i
                                 className="bi bi-x input-icon-icon"
                             />
@@ -79,8 +79,8 @@ const GeneralDetails = ({ generalDetails, setGeneralDetails, generalDetailsError
                     <div className="mb-3">
                         <label htmlFor="exampleFormControlTextarea1" className="form-label spacing-links">Description</label>
                         <textarea
-                            className="form-control name-input"
-                            id="desc"
+                            className="form-control"
+                            id="name-input"
                             rows="3"
                             placeholder="My Description"
                             value={generalDetails.description}
