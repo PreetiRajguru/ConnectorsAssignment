@@ -50,7 +50,12 @@ const GeneralDetails = ({ generalDetails, setGeneralDetails, generalDetailsError
                 <span><b>GENERAL DETAILS</b></span>
             </div>
 
+        
+          
             <form>
+                 
+                    
+                
                 <div className="form-group">
                     <label htmlFor="name" className="form-label">
                         Name<span className='name-label'>*</span>
@@ -71,7 +76,7 @@ const GeneralDetails = ({ generalDetails, setGeneralDetails, generalDetailsError
                                 className="bi bi-x input-icon-icon"
                             />
                         </button>
-                        {generalDetailsErrors.generalDetails && <div className="invalid-feedback">{generalDetailsErrors.generalDetails}</div>}
+                        <div id="invalid-feedbacks">{generalDetailsErrors.generalDetails}</div> 
                     </div>
                 </div>
 

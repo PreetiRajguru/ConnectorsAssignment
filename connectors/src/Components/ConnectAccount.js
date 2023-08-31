@@ -83,15 +83,15 @@ const ConnectAccount = ({ connectAccount, setConnectAccount, connectAccountError
                             <div className="input-icon">
                                 <input
                                     type="text"
-                                    className="form-control name-input"
-                                    id="dynamics"
+                                    className="form-control "
+                                    id="name-input"
                                     style={getInputStyle(connectAccountErrors.dynamics)}
                                     placeholder="https://example.com"
                                     value={connectAccount.dynamics}
                                     onChange={(e) => getInput(e, "dynamics")}
                                     required
                                 />
-                                {connectAccountErrors.dynamics && <div className="invalid-feedback">{connectAccountErrors.dynamics}</div>}
+                                {connectAccountErrors.dynamics && <div id="invalid-feedbacks">{connectAccountErrors.dynamics}</div>}
                             </div>
                         </div>
 
@@ -102,14 +102,14 @@ const ConnectAccount = ({ connectAccount, setConnectAccount, connectAccountError
                             <div className="input-icon">
                                 <input
                                     type="text"
-                                    className="form-control name-input"
-                                    id="ovation"
+                                    className="form-control"
+                                    id="name-input"
                                     style={getInputStyle(connectAccountErrors.ovation)}
                                     value={connectAccount.ovation}
                                     onChange={(e) => getInput(e, "ovation")}
                                     required
                                 />
-                                {connectAccountErrors.ovation && <div className="invalid-feedback">{connectAccountErrors.ovation}</div>}
+                                {connectAccountErrors.ovation && <div id="invalid-feedbacks">{connectAccountErrors.ovation}</div>}
                             </div>
                         </div>
 
@@ -121,14 +121,14 @@ const ConnectAccount = ({ connectAccount, setConnectAccount, connectAccountError
                             <div className="input-icon">
                                 <input
                                     type="text"
-                                    className="form-control name-input"
-                                    id="secret"
+                                    className="form-control"
+                                    id="name-input"
                                     style={getInputStyle(connectAccountErrors.secret)}
                                     value={connectAccount.secret}
                                     onChange={(e) => getInput(e, "secret")}
                                     required
                                 />
-                                {connectAccountErrors.secret && <div className="invalid-feedback">{connectAccountErrors.secret}</div>}
+                                {connectAccountErrors.secret && <div id="invalid-feedbacks">{connectAccountErrors.secret}</div>}
                             </div>
                         </div>
 
@@ -217,8 +217,8 @@ const ConnectAccount = ({ connectAccount, setConnectAccount, connectAccountError
                                 <div className="input-icon">
                                     <input
                                         type="text"
-                                        className="form-control name-input"
-                                        id="orgid"
+                                        className="form-control"
+                                        id="name-input"
                                         placeholder="Enter three character ORG ID"
                                         maxlength="3"
                                         onChange={(e) => setConnectAccount({ ...connectAccount, orgid: e.target.value })}
