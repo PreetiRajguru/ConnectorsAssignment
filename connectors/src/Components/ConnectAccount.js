@@ -159,17 +159,17 @@ const ConnectAccount = ({ connectAccount, setConnectAccount, connectAccountError
 
                                             <div class="w-100" id="acc-spacing"></div>
                                             <div class="col" id="acc-item">Account</div>
-                                            <div class="col" id="acc-desc ">{item.acc}</div>
+                                            <div class="col acc-desc ">{item.acc}</div>
                                             <hr id='acc-grid-hr'></hr>
 
                                             <div class="w-100" id="acc-spacing"></div>
                                             <div class="col" id="acc-item">API Key</div>
-                                            <div class="col" id="acc-desc ">{item.apikey}</div>
+                                            <div class="col acc-desc ">{item.apikey}</div>
                                             <hr id='acc-grid-hr'></hr>
 
                                             <div class="w-100" id="acc-spacing"></div>
                                             <div class="col" id="acc-item">API Secret</div>
-                                            <div class="col" id="acc-desc ">{item.apisecret}</div>
+                                            <div class="col acc-desc ">{item.apisecret}</div>
                                         </div>
                                     </div>
                                 </div>)

@@ -701,7 +701,7 @@ body {
     margin-top: 18px
 }
 
-#acc-desc {
+.col.acc-desc {
     margin-top: -16px;
     text-align: left
 }
