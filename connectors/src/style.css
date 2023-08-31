@@ -622,8 +622,8 @@ body {
     cursor: pointer
 }
 
-.toggle-buttons {
-    margin-top: 25px !important;
+.form-check-input.toggle-buttons {
+    margin-top: 25px;
     cursor: pointer
 }
 
@@ -656,20 +656,20 @@ body {
     font-size: 23px
 }
 
-.acc-disconnect {
-    margin-left: 40px;
-    vertical-align: bottom !important;
+#acc-disconnect {
+    margin-left: 165px;
+    vertical-align: bottom;
     height: 30px;
-    padding-bottom: 30px !important
+    padding-bottom: 30px
 }
 
 .acc-hr {
     width: 500px
 }
 
-.acc-container {
-    width: 800px !important;
-    margin-left: -290px !important
+#acc-container {
+    width: 800px;
+    margin-left: -290px
 }
 
 .acc-grid-top {
@@ -685,25 +685,25 @@ body {
     text-align: left
 }
 
-.acc-grid-hr {
-    width: 500px !important;
-    margin-top: 20px !important;
-    margin-left: 290px !important
+#acc-grid-hr {
+    width: 500px;
+    margin-top: 20px;
+    margin-left: 290px
 }
 
-.acc-item {
-    margin-top: -16px !important;
-    text-align: right !important;
-    color: grey !important
+#acc-item {
+    margin-top: -16px;
+    text-align: right;
+    color: grey
 }
 
-.acc-spacing {
-    margin-top: 18px !important
+#acc-spacing {
+    margin-top: 18px
 }
 
-.acc-desc {
-    margin-top: -16px !important;
-    text-align: left !important
+#acc-desc {
+    margin-top: -16px;
+    text-align: left
 }
 
 .acc-text {
@@ -723,8 +723,8 @@ body {
     margin-left: 30px
 }
 
-.toggle-space {
-    margin-top: 25px !important
+.form-check-input.toggle-space {
+    margin-top: 25px
 }
 
 .toggle-button-label {

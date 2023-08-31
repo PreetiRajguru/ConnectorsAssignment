@@ -142,34 +142,34 @@ const ConnectAccount = ({ connectAccount, setConnectAccount, connectAccountError
 
                         <i class="bi bi-check-circle-fill acc-icon"></i>
                         <span className='acc-connected'>Account Connected</span>
-                        <button className='btn btn-outline-secondary text-center acc-disconnect' onClick={handleDisconnect}>Disconnect Account</button>
+                        <button className='btn btn-outline-secondary text-center' id="acc-disconnect" onClick={handleDisconnect}>Disconnect Account</button>
                         <hr className='acc-hr'></hr>
 
                         {AccountData.map((item, index) => {
                             return (
                                 <div key={index}>
 
-                                    <div class="container acc-container">
+                                    <div class="container" id="acc-container">
                                         <div class="row">
 
                                             <div class="w-100 acc-grid-top"></div>
                                             <div class="col acc-grid-url">URL</div>
                                             <div class="col acc-grid.item">{item.url}</div>
-                                            <hr className='acc-grid-hr'></hr>
+                                            <hr id='acc-grid-hr'></hr>
 
-                                            <div class="w-100 acc-spacing"></div>
-                                            <div class="col acc-item">Account</div>
-                                            <div class="col acc-desc ">{item.acc}</div>
-                                            <hr className='acc-grid-hr'></hr>
+                                            <div class="w-100" id="acc-spacing"></div>
+                                            <div class="col" id="acc-item">Account</div>
+                                            <div class="col" id="acc-desc ">{item.acc}</div>
+                                            <hr id='acc-grid-hr'></hr>
 
-                                            <div class="w-100 acc-spacing"></div>
-                                            <div class="col acc-item">API Key</div>
-                                            <div class="col acc-desc ">{item.apikey}</div>
-                                            <hr className='acc-grid-hr'></hr>
+                                            <div class="w-100" id="acc-spacing"></div>
+                                            <div class="col" id="acc-item">API Key</div>
+                                            <div class="col" id="acc-desc ">{item.apikey}</div>
+                                            <hr id='acc-grid-hr'></hr>
 
-                                            <div class="w-100 acc-spacing"></div>
-                                            <div class="col acc-item">API Secret</div>
-                                            <div class="col acc-desc ">{item.apisecret}</div>
+                                            <div class="w-100" id="acc-spacing"></div>
+                                            <div class="col" id="acc-item">API Secret</div>
+                                            <div class="col" id="acc-desc ">{item.apisecret}</div>
                                         </div>
                                     </div>
                                 </div>)
