@@ -602,7 +602,7 @@ body {
     margin-top: 90px
 }
 
-#invalid-feedback {
+#invalid-feedbacks {
     display: block;
     width: 100%;
     margin-top: .25rem;
@@ -617,6 +617,130 @@ body {
 #spacing-links-bottom {
     margin-bottom: 23px
 }
+
+.dropdown {
+    cursor: pointer
+}
+
+.form-check-input.toggle-buttons {
+    margin-top: 25px;
+    cursor: pointer
+}
+
+.connect-account-data {
+    margin-left: 20px
+}
+
+.form-top {
+    margin-top: 30px
+}
+
+.info-icon {
+    color: #3faae6;
+    font-size: 12px;
+    margin-left: 5px
+}
+
+.field-input {
+    margin-top: 15px
+}
+
+.acc-connected {
+    vertical-align: text-bottom;
+    margin-left: 5px;
+    line-height: 27px
+}
+
+.acc-icon {
+    color: green;
+    font-size: 23px
+}
+
+#acc-disconnect {
+    margin-left: 165px;
+    vertical-align: bottom;
+    height: 30px;
+    padding-bottom: 30px
+}
+
+.acc-hr {
+    width: 500px
+}
+
+#acc-container {
+    width: 800px;
+    margin-left: -290px
+}
+
+.acc-grid-top {
+    margin-top: 2px
+}
+
+.acc-grid-url {
+    text-align: right;
+    color: grey
+}
+
+.acc-grid.item {
+    text-align: left
+}
+
+#acc-grid-hr {
+    width: 500px;
+    margin-top: 20px;
+    margin-left: 290px
+}
+
+#acc-item {
+    margin-top: -16px;
+    text-align: right;
+    color: grey
+}
+
+#acc-spacing {
+    margin-top: 18px
+}
+
+.col.acc-desc {
+    margin-top: -16px;
+    text-align: left
+}
+
+.acc-text {
+    color: grey;
+    font-size: 20px
+}
+
+.toggle-top {
+    margin-top: 20px
+}
+
+.toggle-icon {
+    margin-left: -10px
+}
+
+.toggle-text {
+    margin-left: 30px
+}
+
+.form-check-input.toggle-space {
+    margin-top: 25px
+}
+
+.toggle-button-label {
+    margin-top: 20px;
+    margin-left: 10px
+}
+
+.orgid-label {
+    margin-top: 15px;
+    margin-left: -80px
+}
+
+.orgid-label-color {
+    color: grey
+}
+
 
 .arrow-icon {
     margin-right: 10px

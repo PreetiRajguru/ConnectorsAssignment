@@ -1,34 +1,29 @@
 import React from 'react';
+import * as constantObjects from '../Constants/ConstantObjects';
 
-const GeneralDetails = ({ generalDetails, setGeneralDetails, validationErrors, setValidationErrors }) => {
-
-    const GeneralDetailsData = [{
-        desc: "Microsoft Dynamics is a line of enterprise Resource Planning and customer relationship management software applications. Microsoft markets Dynamics applications through a network of reselling partners who provide specialized services. ",
-        learnMoreLink: '#',
-        helpLink: '#',
-    }]
+const GeneralDetails = ({ generalDetails, setGeneralDetails, generalDetailsErrors, setGeneralDetailsErrors }) => {
 
     const clearValidationError = () => {
-        setValidationErrors({});
+        setGeneralDetailsErrors({});
     };
 
     const handleClearName = () => {
-        setGeneralDetails('');
+        setGeneralDetails({ ...generalDetails, name: ""});
     };
 
     const getInput = (e) => {
         clearValidationError({});
-        setGeneralDetails({ name: e.target.value });
+        setGeneralDetails({ ...generalDetails, name: e.target.value });
     }
 
     const inputStyle = {
-        border: validationErrors.generalDetails ? '1px solid red' : '1px solid #ced4da',
+        border: generalDetailsErrors.generalDetails ? '1px solid red' : '1px solid #ced4da',
     };
 
     return (
         <div className='heading-text'>
 
-            {GeneralDetailsData.map((item, index) => {
+            {constantObjects.GeneralDetailsData.map((item, index) => {
                 return (
                     <div key={index}>
 
@@ -51,6 +46,7 @@ const GeneralDetails = ({ generalDetails, setGeneralDetails, validationErrors, s
             </div>
 
             <form>
+                 
                 <div className="form-group">
                     <label htmlFor="name" className="form-label">
                         Name<span className='name-label'>*</span>
@@ -71,8 +67,7 @@ const GeneralDetails = ({ generalDetails, setGeneralDetails, validationErrors, s
                                 className="bi bi-x input-icon-icon"
                             />
                         </button>
-                        {validationErrors.generalDetails && <div id="invalid-feedback">{validationErrors.generalDetails}</div>}
-
+                        <div id="invalid-feedbacks">{generalDetailsErrors.generalDetails}</div> 
                     </div>
                 </div>
 

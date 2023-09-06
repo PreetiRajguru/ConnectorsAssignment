@@ -1,45 +1,7 @@
-import React from 'react'
+import React from 'react';
+import * as constantObjects from '../Constants/ConstantObjects';
 
 const Sidebar = () => {
-
-  const SidebarData = [
-    {
-      title: "PERSONAL",
-      items: [
-        { item1: "My Profile" },
-        { item2: "Notifications" }
-      ]
-    },
-    {
-      title: "ORGANIZATION",
-      items: [
-        { item1: "General" },
-        { item2: "Roles & Permissions" },
-        { item3: "Teams" },
-        { item4: "Users" }]
-    },
-    {
-      title: "COMMUNICATIONS",
-      items: [
-        { item1: "Channels" },
-        { item2: "Quick Replies" },
-        { item3: "Templates" }]
-    },
-    {
-      title: "KNOWLEDGE",
-      items: [
-        { item1: "Approval Process" },
-        { item2: "Libraries" },
-        { item3: "Templates" }]
-    },
-    {
-      title: "OBJECT MANAGEMENT",
-      items: [
-        { item1: "Bulk Imports" },
-        { item2: "Card Layouts" },
-        { item3: "Custom Fields" }]
-    }
-  ]
 
   return (
     <>
@@ -55,7 +17,7 @@ const Sidebar = () => {
         <hr className='hr-tag'></hr>
 
         <ul className='sidebar-list'>
-          {SidebarData.map((section, sectionIndex) => (
+          {constantObjects.SidebarData.map((section, sectionIndex) => (
             <div key={sectionIndex}>
               <li id="sidebar-headers">{section.title}</li>
               {section.items.map((item, index) => (

@@ -1,85 +1,15 @@
 import React from 'react';
-import logoImage2 from '../Assets/Images/msd.png';
-import logoImage3 from '../Assets/Images/another.png';
-import logoImage4 from '../Assets/Images/plugin.png';
 import { useState } from 'react';
 import "../style.css";
 import { Link } from 'react-router-dom';
 import Sidebar from './Sidebar';
 import Navbar from './Navbar';
+import * as constantObjects from '../Constants/ConstantObjects';
 
 const HomePage = () => {
 
-  const newConnectorsData = [{
-    cardicon: { logoImage2 },
-    cardtitle: 'Microsoft Dynamics'
-  },
-  {
-    cardicon: { logoImage4 },
-    cardtitle: 'Custom Connector  '
-  },
-  {
-    cardicon: { logoImage3 },
-    cardtitle: 'Another Connector'
-  },
-  {
-    cardicon: { logoImage3 },
-    cardtitle: 'Another Connector'
-  },
-  {
-    cardicon: { logoImage3 },
-    cardtitle: 'Another Connector'
-  }]
-
-  const connectorsData = [{
-    cardicon: { logoImage2 },
-    cardtitle: 'Microsoft Dynamics',
-    name: 'Connector Name',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-    isEnabled: false,
-    dropdown: false,
-    link: "https://example.com"
-  },
-  {
-    cardicon: { logoImage3 },
-    cardtitle: 'Another Connector',
-    name: 'Connector Name',
-    description: 'Lorem ipsum.',
-    isEnabled: false,
-    dropdown: false,
-    link: "https://example.com"
-  },
-  {
-    cardicon: { logoImage3 },
-    cardtitle: 'Another Connector',
-    name: 'Connector Name',
-    description: 'Lorem ipsum dolor sit amet, consectetur.',
-    isEnabled: false,
-    dropdown: false,
-    link: "https://example.com"
-  },
-  {
-    cardicon: { logoImage3 },
-    cardtitle: 'Another Connector',
-    name: 'Connector Name',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-    isEnabled: false,
-    dropdown: false,
-    link: "https://example.com"
-  },
-  {
-    cardicon: { logoImage3 },
-    cardtitle: 'Another Connector',
-    name: 'Connector Name',
-    description: '',
-    isEnabled: false,
-    dropdown: false,
-    link: "https://example.com"
-  }]
-
-  const [connectors, setConnectors] = useState(connectorsData);
-  const [newConnectors, setnewConnectors] = useState(newConnectorsData);
-  const [drop, setDrop] = useState(Array(connectorsData.length).fill(false));
+  const [connectors, setConnectors] = useState(constantObjects.connectorsData);
+  const [drop, setDrop] = useState(Array(constantObjects.connectorsData.length).fill(false));
 
   const handleToggle = (index) => {
     setConnectors(prevConnectors => {
@@ -178,7 +108,7 @@ const HomePage = () => {
 
           <div class="container card-container">
             <div class="row">
-              {newConnectors.map((item, index) => {
+              {constantObjects.newConnectorsData.map((item, index) => {
                 return (
                   <div key={index} className="col-sm" id="card-padding">
                     <div class="card card-border-shadow">
