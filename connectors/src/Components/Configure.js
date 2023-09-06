@@ -53,7 +53,7 @@ function Stepper({ current, steps }) {
 
 function StepperState() {
     const [current, setCurrent] = useState(0);
-
+    
     const [generalDetails, setGeneralDetails] = useState({});
     const [generalDetailsErrors, setGeneralDetailsErrors] = useState({});
 
@@ -78,18 +78,18 @@ function StepperState() {
             const errors = {};
 
             if (!connectAccount.dynamics) {
-                errors.dynamics = "Dynamics CRM URL is required.";
+                errors.dynamics = constants.DYNAMICS_URL;
             }
             else if (!isValidURL(connectAccount.dynamics)) {
-                errors.dynamics = "Dynamics CRM URL is incorrect.";
+                errors.dynamics = constants.DYNAMICS_INCORRECT_URL;
             }
 
             if (!connectAccount.ovation) {
-                errors.ovation = "OvationCXM API Key is required.";
+                errors.ovation = constants.API_KEY;
             }
 
             if (!connectAccount.secret) {
-                errors.secret = "OvationCXM API Secret is required.";
+                errors.secret = constants.API_SECRET;
             }
 
             if (Object.keys(errors).length > 0) {

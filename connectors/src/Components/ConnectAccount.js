@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import * as constantObjects from '../Constants/ConstantObjects';
 
 const ConnectAccount = ({ connectAccount, setConnectAccount, connectAccountErrors, setConnectAccountErrors }) => {
     const [signedIn, setSignedIn] = useState(false);
@@ -60,13 +61,6 @@ const ConnectAccount = ({ connectAccount, setConnectAccount, connectAccountError
     const [openInput, setOpenInput] = useState(false);
     const toggle = <input className="form-check-input toggle-buttons" type="checkbox" id={`toggleButton-3`} onChange={(e) => setConnectAccount({ ...connectAccount, toggle3: e.target.value })} onClick={() => { setOpenInput(!openInput) }}
     />
-
-    const AccountData = [{
-        url: "https://ovationcxm.msdynamics.com",
-        acc: 'jmith@ovationcxm.com',
-        apikey: '2xo4jdajh5541as3',
-        apisecret: '**********',
-    }]
 
     return (
         <div className='connect-account-data'>
@@ -145,7 +139,7 @@ const ConnectAccount = ({ connectAccount, setConnectAccount, connectAccountError
                         <button className='btn btn-outline-secondary text-center' id="acc-disconnect" onClick={handleDisconnect}>Disconnect Account</button>
                         <hr className='acc-hr'></hr>
 
-                        {AccountData.map((item, index) => {
+                        {constantObjects.AccountData.map((item, index) => {
                             return (
                                 <div key={index}>
 

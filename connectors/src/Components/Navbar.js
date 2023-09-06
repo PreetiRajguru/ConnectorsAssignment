@@ -3,6 +3,7 @@ import logoImage5 from '../Assets/Images/profilepic.png';
 import logoImage1 from '../Assets/Images/ovation.png';
 
 const Navbar = () => {
+    
     return (
         <>
             <nav id="navbar">
