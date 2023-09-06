@@ -94,6 +94,7 @@ const SyncMappings = () => {
     cxmEntityName: e.cxmEntityName,
     crmEntityName: e.crmEntityName,
     syncDirection: '',
+    isActive: false,
     mappings: cxmEntityField.filter(s => s.entityName == e.cxmEntityName)[0].entityField.map((cxm) => ({
       cxmFieldLabel: cxm.label,
       cxmFieldName: cxm.value,
@@ -105,6 +106,18 @@ const SyncMappings = () => {
       isCustomField: cxm.isCustomField,
     })),
   })));
+
+  const handleCheckboxChange = (event, index) => {
+    const checked = event.target.checked;
+    setFormData((prevFormData) => {
+        const updatedFormData = [...prevFormData];
+        updatedFormData[index] = {
+            ...updatedFormData[index],
+            isActive: checked,
+        };
+        return updatedFormData;
+    });
+};
 
   const addCustomRow = (index) => {
     const selectedMapping = formData[index];
@@ -271,6 +284,7 @@ const SyncMappings = () => {
             {formData.map((mapping, index) => (
               <div className='form-check' key={index}>
                 <div className='accordion accordion-style' id={`accordionExample${index}`}>
+                  
                   <div className='accordion-item'>
 
                     <h2 className='accordion-header' id={`headingOne${index}`}>
@@ -284,7 +298,8 @@ const SyncMappings = () => {
                       >
                         {/* Accordion Item */}
                         <div className='form-check'>
-                          <input className='form-check-input' type='checkbox' value='' id={`flexCheckDefault${index}`} />
+                          <input className='form-check-input' type='checkbox' value='' id={`flexCheckDefault${index}`}  onChange={(e) => handleCheckboxChange(e, index)}
+                                checked={mapping.isActive} />
                           <label className='form-check-label' htmlFor={`flexCheckDefault${index}`}>
                             {mapping.cxmEntityName}
                           </label>

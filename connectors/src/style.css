@@ -855,3 +855,11 @@ body {
 .custom-crm-place {
     margin-left: 7px
 }
+
+.accordion-button:not(.collapsed) {
+    background-color: white !important;
+}
+
+.accordion {
+    --bs-accordion-btn-focus-box-shadow: white !important;
+}
