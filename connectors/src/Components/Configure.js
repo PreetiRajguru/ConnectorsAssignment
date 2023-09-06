@@ -5,10 +5,10 @@ import { Link } from 'react-router-dom';
 import * as constants from '../Constants/ConstantMessages';
 
 const steps = [
-    { label: 'General Details', component: Filters },
+    { label: 'General Details', component: GeneralDetails },
     { label: 'Connect Account', component: GeneralDetails },
     { label: 'Sync & Mappings', component: GeneralDetails },
-    { label: 'Filters', component: GeneralDetails },
+    { label: 'Filters', component: Filters },
     { label: 'Test & enable Connection', component: GeneralDetails },
 ];
 

@@ -9,203 +9,6 @@ const Filters = () => {
         setSignedIn(true);
     };
 
-    const handleDelete = (index) => {
-        setFormData((prevFormData) => {
-            const updatedFormData = [...prevFormData];
-            updatedFormData.splice(index, 1);
-            return updatedFormData;
-        });
-    };
-
-    const handleFilterGroupNameChange = (e, index) => {
-        const value = e.target.value;
-        setFormData((prevFormData) => {
-            const updatedFormData = [...prevFormData];
-            updatedFormData[index] = {
-                ...updatedFormData[index],
-                filterGroupName: value,
-            };
-            return updatedFormData;
-        });
-    };
-
-    const handleFilterObjectChange = (event, index) => {
-        const value = event.target.value;
-
-        const matchingMapping = mappingData.find((mapping) => mapping.cxmEntityName === value);
-
-        if (matchingMapping) {
-            const crmEntityName = matchingMapping.crmEntityName;
-
-            const matchingCrmEntity = crmEntityField.find((entity) => entity.entityName === crmEntityName);
-
-            if (matchingCrmEntity) {
-                const crmFields = matchingCrmEntity.entityField;
-
-                const matchingCxmEntity = cxmEntityField.find((entity) => entity.entityName === value);
-
-                if (matchingCxmEntity) {
-                    const cxmFields = matchingCxmEntity.entityField;
-
-                    setFormData((prevFormData) => {
-                        const updatedFormData = [...prevFormData];
-                        updatedFormData[index] = {
-                            ...updatedFormData[index],
-                            filterObjectName: value,
-                            filters: {
-                                ...updatedFormData[index].filters,
-                                cxmFields: cxmFields,
-                                crmFields: crmFields,
-                            },
-                        };
-                        return updatedFormData;
-                    });
-                }
-            }
-        } else {
-            setFormData((prevFormData) => {
-                const updatedFormData = [...prevFormData];
-                updatedFormData[index] = {
-                    ...updatedFormData[index],
-                    filterObjectName: value,
-                    filters: {
-                        ...updatedFormData[index].filters,
-                        cxmFields: [],
-                        crmFields: [],
-                    },
-                };
-                return updatedFormData;
-            });
-        }
-    };
-
-    const handleFilterDirectionChange = (event, index) => {
-        const value = event.target.value;
-        setFormData((prevFormData) => {
-            const updatedFormData = [...prevFormData];
-            updatedFormData[index] = {
-                ...updatedFormData[index],
-                filterDirection: value,
-            };
-            return updatedFormData;
-        });
-    };
-
-    const handleCheckboxChange = (event, index) => {
-        const checked = event.target.checked;
-        setFormData((prevFormData) => {
-            const updatedFormData = [...prevFormData];
-            updatedFormData[index] = {
-                ...updatedFormData[index],
-                isActive: checked,
-            };
-            return updatedFormData;
-        });
-    };
-
-    const handleOperatorChange = (event, index) => {
-        const selectedOperator = event.target.value;
-        setFormData((prevFormData) => {
-            const updatedFormData = [...prevFormData];
-            updatedFormData[index] = {
-                ...updatedFormData[index],
-                filters: {
-                    ...updatedFormData[index].filters,
-                    operator: selectedOperator,
-                },
-            };
-            return updatedFormData;
-        });
-    };
-
-    const handleFieldChange = (event, index) => {
-        const selectedValue = event.target.value;
-        const selectedLabel = event.target.options[event.target.selectedIndex].text;
-
-        setFormData((prevFormData) => {
-            const updatedFormData = [...prevFormData];
-            updatedFormData[index] = {
-                ...updatedFormData[index],
-                filters: {
-                    ...updatedFormData[index].filters,
-                    cxmFields: [
-                        {
-                            value: selectedValue,
-                            label: selectedLabel,
-                        },
-                    ],
-                    cxmFieldName: selectedValue,
-                },
-            };
-            return updatedFormData;
-        });
-    };
-
-    const handleCrmFieldChange = (event, index) => {
-        const selectedValue = event.target.value;
-
-        setFormData((prevFormData) => {
-            const updatedFormData = [...prevFormData];
-            updatedFormData[index] = {
-                ...updatedFormData[index],
-                filters: {
-                    ...updatedFormData[index].filters,
-                    crmFieldName: selectedValue,
-                },
-            };
-            return updatedFormData;
-        });
-    };
-
-    const addFilterGroup = () => {
-        const newFilterGroup = {
-            filterGroupName: '',
-            filterObjectName: '',
-            filterDirection: '',
-            isActive: false,
-            filters: {
-                operator: '',
-                cxmFields: [],
-                crmFields: [],
-                cxmFieldName: '',
-                crmFieldName: '',
-            }
-        };
-
-        setFormData((prevFormData) => [...prevFormData, newFilterGroup]);
-    };
-
-    // const addNewFilter = (index) => {
-
-    //     const newFilter = {
-    //             operator: '',
-    //             cxmFields: [],
-    //             crmFields: [],
-    //             cxmFieldName: '',
-    //             crmFieldName: '',
-    //     };
-
-    //     const updatedFormData = [...formData];
-    //     updatedFormData[index].filters.push(newFilter);
-    //     setFormData(updatedFormData);
-    // };
-
-    const [formData, setFormData] = useState([
-        {
-            filterGroupName: '',
-            filterObjectName: '',
-            filterDirection: '',
-            isActive: false,
-            filters: {
-                operator: '',
-                cxmFields: [],
-                crmFields: [],
-                cxmFieldName: '',
-                crmFieldName: '',
-            }
-        }
-    ]);
-
     const filterObjectOptions = [
         { value: 'customer', label: 'Customer' },
         { value: 'contact', label: 'Contact' },
@@ -305,6 +108,248 @@ const Filters = () => {
         },
     ];
 
+    const [formData, setFormData] = useState([
+        {
+            filterGroupName: '',
+            filterObjectName: '',
+            filterDirection: '',
+            isActive: false,
+            filters: [{
+                operator: '',
+                cxmFields: [],
+                crmFields: [],
+                cxmFieldName: '',
+                crmFieldName: '',
+            },
+            ],
+        }
+    ]);
+
+    const addFilterGroup = () => {
+        const newFilterGroup = {
+            filterGroupName: '',
+            filterObjectName: '',
+            filterDirection: '',
+            isActive: false,
+            filters: [
+                {
+                    operator: '',
+                    cxmFields: [],
+                    crmFields: [],
+                    cxmFieldName: '',
+                    crmFieldName: '',
+                },
+            ],
+        };
+
+        setFormData((prevFormData) => [...prevFormData, newFilterGroup]);
+    };
+
+    const addNewFilter = (groupIndex) => {
+        const newFilter = {
+            operator: '',
+            cxmFields: [],
+            crmFields: [],
+            cxmFieldName: '',
+            crmFieldName: '',
+        };
+
+        const updatedFormData = [...formData];
+        updatedFormData[groupIndex].filters.push(newFilter);
+        setFormData(updatedFormData);
+    };
+
+    const handleDeleteFilterGroup = (index) => {
+        setFormData((prevFormData) => {
+            const updatedFormData = [...prevFormData];
+            updatedFormData.splice(index, 1);
+            return updatedFormData;
+        });
+    };
+
+    const handleDeleteFilterRow = (groupIndex, filterIndex) => {
+
+        const updatedFormData = [...formData];
+        const filter = updatedFormData[groupIndex];
+
+        if (filter && filter.filters) {
+            filter.filters.splice(filterIndex, 1);
+            setFormData(updatedFormData);
+        }
+    };
+
+    const handleFilterGroupNameChange = (e, index) => {
+        const value = e.target.value;
+        setFormData((prevFormData) => {
+            const updatedFormData = [...prevFormData];
+            updatedFormData[index] = {
+                ...updatedFormData[index],
+                filterGroupName: value,
+            };
+            return updatedFormData;
+        });
+    };
+
+    const handleFilterObjectChange = (event, groupIndex) => {
+        const value = event.target.value;
+
+        const matchingMapping = mappingData.find((mapping) => mapping.cxmEntityName === value);
+
+        if (matchingMapping) {
+            const crmEntityName = matchingMapping.crmEntityName;
+
+            const matchingCrmEntity = crmEntityField.find((entity) => entity.entityName === crmEntityName);
+
+            if (matchingCrmEntity) {
+                const crmFields = matchingCrmEntity.entityField;
+
+                const matchingCxmEntity = cxmEntityField.find((entity) => entity.entityName === value);
+
+                if (matchingCxmEntity) {
+                    const cxmFields = matchingCxmEntity.entityField;
+
+                    setFormData((prevFormData) => {
+                        const updatedFormData = [...prevFormData];
+                        const updatedFilterGroup = { ...updatedFormData[groupIndex] };
+                        updatedFilterGroup.filterObjectName = value;
+
+                        updatedFilterGroup.filters = updatedFilterGroup.filters || [];
+
+                        if (updatedFilterGroup.filters.length > 0) {
+                            updatedFilterGroup.filters.forEach((filter) => {
+                                filter.cxmFields = cxmFields;
+                                filter.crmFields = crmFields;
+                            });
+                        }
+
+                        updatedFormData[groupIndex] = updatedFilterGroup;
+                        return updatedFormData;
+                    });
+                }
+            }
+        } else {
+            setFormData((prevFormData) => {
+                const updatedFormData = [...prevFormData];
+                const updatedFilterGroup = { ...updatedFormData[groupIndex] };
+                updatedFilterGroup.filterObjectName = value;
+
+                updatedFilterGroup.filters = updatedFilterGroup.filters || [];
+
+                updatedFormData[groupIndex] = updatedFilterGroup;
+                return updatedFormData;
+            });
+        }
+    };
+
+    const handleFilterDirectionChange = (event, index) => {
+        const value = event.target.value;
+        setFormData((prevFormData) => {
+            const updatedFormData = [...prevFormData];
+            updatedFormData[index] = {
+                ...updatedFormData[index],
+                filterDirection: value,
+            };
+            return updatedFormData;
+        });
+    };
+
+    const handleCheckboxChange = (event, index) => {
+        const checked = event.target.checked;
+        setFormData((prevFormData) => {
+            const updatedFormData = [...prevFormData];
+            updatedFormData[index] = {
+                ...updatedFormData[index],
+                isActive: checked,
+            };
+            return updatedFormData;
+        });
+    };
+
+    const handleOperatorChange = (event, groupIndex, filterIndex) => {
+        const selectedOperator = event.target.value;
+
+        setFormData((prevFormData) => {
+            const updatedFormData = [...prevFormData];
+            const updatedFilterGroup = { ...updatedFormData[groupIndex] };
+
+            updatedFilterGroup.filters = updatedFilterGroup.filters || [];
+
+            if (!updatedFilterGroup.filters[filterIndex]) {
+                updatedFilterGroup.filters[filterIndex] = {
+                    operator: '',
+                    cxmFields: [],
+                    crmFields: [],
+                    cxmFieldName: '',
+                    crmFieldName: '',
+                };
+            }
+
+            updatedFilterGroup.filters[filterIndex].operator = selectedOperator;
+
+            updatedFormData[groupIndex] = updatedFilterGroup;
+            return updatedFormData;
+        });
+    };
+
+    const handleFieldChange = (event, groupIndex, filterIndex) => {
+        const selectedValue = event.target.value;
+        const selectedLabel = event.target.options[event.target.selectedIndex].text;
+
+        setFormData((prevFormData) => {
+            const updatedFormData = [...prevFormData];
+            const updatedFilterGroup = { ...updatedFormData[groupIndex] };
+
+            updatedFilterGroup.filters = updatedFilterGroup.filters || [];
+
+            if (!updatedFilterGroup.filters[filterIndex]) {
+                updatedFilterGroup.filters[filterIndex] = {
+                    operator: '',
+                    cxmFields: [],
+                    crmFields: [],
+                    cxmFieldName: '',
+                    crmFieldName: '',
+                };
+            }
+
+            updatedFilterGroup.filters[filterIndex].cxmFields = [
+                {
+                    value: selectedValue,
+                    label: selectedLabel,
+                },
+            ];
+            updatedFilterGroup.filters[filterIndex].cxmFieldName = selectedValue;
+
+            updatedFormData[groupIndex] = updatedFilterGroup;
+            return updatedFormData;
+        });
+    };
+
+    const handleCrmFieldChange = (event, groupIndex, filterIndex) => {
+        const selectedValue = event.target.value;
+
+        setFormData((prevFormData) => {
+            const updatedFormData = [...prevFormData];
+            const updatedFilterGroup = { ...updatedFormData[groupIndex] };
+
+            updatedFilterGroup.filters = updatedFilterGroup.filters || [];
+
+            if (!updatedFilterGroup.filters[filterIndex]) {
+                updatedFilterGroup.filters[filterIndex] = {
+                    operator: '',
+                    cxmFields: [],
+                    crmFields: [],
+                    cxmFieldName: '',
+                    crmFieldName: '',
+                };
+            }
+
+            updatedFilterGroup.filters[filterIndex].crmFieldName = selectedValue;
+
+            updatedFormData[groupIndex] = updatedFilterGroup;
+            return updatedFormData;
+        });
+    };
+
     return (
         <div>{!signedIn ?
 
@@ -313,49 +358,42 @@ const Filters = () => {
                 <img
                     src={filter}
                     alt="Logo"
-                    style={{
-                        height: "110px",
-                        width: "150px",
-                        marginTop: "7%",
-                        marginLeft: "45%",
-                    }}
+                    className='filter-logo'
                 />
-                <div style={{
-                    marginTop: "1%",
-                    marginLeft: "45%",
-                }}><span style={{ fontSize: "20px" }}> No Filter Groups</span>
-                </div>
 
-                <div style={{
-                    marginTop: "1%",
-                    marginLeft: "36%",
-                    color: "grey"
-                }}>
+                <div className='filter-title'><span id='filter-header'> No Filter Groups</span></div>
+
+                <div className='filter-text'>
 
                     <span>
-                        If no filter groups are added, all the configured content will <br />
-                        <span style={{ marginLeft: "6px" }}>
-                            be sync'd. If you would like to add conditional filtering to </span><br />
-                        <span style={{ marginLeft: "59px" }}>
-                            each sync, select Add Filter Group Below.</span>
+                        <div> If no filter groups are added, all the configured content will </div>
+                        <span className='span-tab'>
+                            be sync'd. If you would like to add conditional filtering to </span>
+                        <div><span className='span-tab-text'>
+                            each sync, select Add Filter Group Below.</span></div>
                     </span>
 
-                    <br />
 
-                    <button type="button" className="btn btn-outline-secondary" onClick={handleAddFilter}
-                        style={{
-                            marginTop: "2%",
-                            marginLeft: "13%",
-                            width: "auto"
-                        }}>
-                        <i class="bi bi-plus-lg"></i> Add Filter Group</button>
+                    <div>
+                        <button
+                            type="button"
+                            className="btn btn-outline-secondary button-add-filter"
+                            onClick={handleAddFilter}
+                        >
+                            <i className="bi bi-plus-lg"></i> Add Filter Group
+                        </button>
+                    </div>
                 </div>
+
             </div> :
 
             //second part
-            <div style={{ marginLeft: "20px" }}>
-                {formData.map((filterGroup, index) => (
-                    <div className="card" key={index} style={{ backgroundColor: "#ebf3f9", borderBlockColor: "#4ca8ee", width: "950px", marginTop: "20px" }}>
+            <div className='filter-screen'>
+
+                {formData.map((filterGroup, groupIndex) => (
+
+                    <div className="card" key={groupIndex} id="filter-group-card">
+
                         <div className="card-body">
 
                             <label htmlFor="name" className="form-label">
@@ -363,21 +401,20 @@ const Filters = () => {
                                 <input
                                     type="text"
                                     className="form-control"
-                                    id="name-input"
+                                    id="filter-group-name"
                                     placeholder="Enter a Filter Group Name"
                                     required
-                                    style={{ width: "230px", marginRight: "18px" }}
                                     value={filterGroup.filterGroupName}
-                                    onChange={(e) => handleFilterGroupNameChange(e, index)}
+                                    onChange={(e) => handleFilterGroupNameChange(e, groupIndex)}
                                 />
                             </label>
 
-                            <label htmlFor="name" className="form-label" style={{ marginRight: "18px" }}>
+                            <label htmlFor="name" className="form-label filter-object-label">
                                 Filter Object<span className='name-label'>*</span>
                                 <select
                                     className="form-select"
                                     aria-label="Default select example"
-                                    onChange={(e) => handleFilterObjectChange(e, index)}
+                                    onChange={(e) => handleFilterObjectChange(e, groupIndex)}
                                     value={filterGroup.filterObjectName}
                                 >
                                     {filterObjectOptions.map((option, index) => (
@@ -393,7 +430,7 @@ const Filters = () => {
                                 <select
                                     className="form-select"
                                     aria-label="Default select example"
-                                    onChange={(e) => handleFilterDirectionChange(e, index)}
+                                    onChange={(e) => handleFilterDirectionChange(e, groupIndex)}
                                     value={filterGroup.filterDirection}
                                 >
                                     {filterDirectionOptions.map((option, index) => (
@@ -405,130 +442,150 @@ const Filters = () => {
                             </label>
 
                             <input
-                                className="form-check-input"
+                                className="form-check-input "
                                 type="checkbox"
                                 value=""
-                                id="flexCheckDefault"
-                                style={{ marginLeft: "15px", marginTop: "35px" }}
-                                onChange={(e) => handleCheckboxChange(e, index)}
+                                id="active-checkbox"
+                                onChange={(e) => handleCheckboxChange(e, groupIndex)}
                                 checked={filterGroup.isActive}
                             />
-                            <label className="form-check-label" htmlFor="flexCheckDefault" style={{ marginLeft: "10px" }}>
+                            <label className="form-check-label" htmlFor="flexCheckDefault" id='active-label'>
                                 Active
                             </label>
 
-                            <i class="bi bi-trash" style={{ marginLeft: "25px", cursor: "pointer", fontSize: "24px", color: "grey" }} onClick={() => handleDelete(index)}></i>
+                            <i className="bi bi-trash delete-filter-group" onClick={() => handleDeleteFilterGroup(groupIndex)}></i>
 
                         </div>
 
+                        <div className="card" id='filter-card'>
 
-                        <div className="card" style={{ backgroundColor: "#f8f6f6", borderBlockColor: "grey", width: "920px", marginLeft: "13px", marginBottom: "20px" }}>
                             <div className="card-body">
 
-                                <div style={{ display: "flex", alignItems: "center" }}>
+                                <div className='inner-card-title'>
                                     Sync this field if
-                                    <select class="form-select" aria-label="Default select example" style={{ width: "80px", marginLeft: "15px", marginRight: "15px" }}>
-                                        <option selected>All</option>
+                                    <select className="form-select " aria-label="Default select example" id='inner-card-title-text'>
+                                        <option >All</option>
                                     </select>
                                     of the following match:
                                 </div>
 
                                 <hr></hr>
 
-                                <label htmlFor="name" className="form-label" style={{ marginRight: "18px" }}>
-                                    Field
-                                    <select
-                                        className="form-select"
-                                        aria-label="Default select example"
-                                        value={filterGroup.filters.cxmFieldName || ''}
-                                        onChange={(e) => handleFieldChange(e, index)}
-                                    >
-                                        <option value="" disabled>Select a Field</option>
-                                        {formData[index].filterObjectName &&
-                                            cxmEntityField
-                                                .find((entity) => entity.entityName === formData[index].filterObjectName)
-                                                .entityField.map((field, index) => (
-                                                    <option key={index} value={field.value}>
-                                                        {field.label}
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-sm select-field-text">
+                                            Field
+                                        </div>
+                                        <div class="col-sm select-operator-text">
+                                            Operator
+                                        </div>
+                                        <div class="col-sm select-comparison-text">
+                                            Comparison Value
+                                        </div>
+                                    </div>
+                                </div>
+
+                                {filterGroup.filters.map((filter, filterIndex) => (
+
+                                    <div key={filterIndex}>
+
+                                        <div className='custom-filters'>
+
+                                            {/* Column 1 */}
+                                            <div className='field-column'>
+                                                <select
+                                                    className="form-select"
+                                                    aria-label="Default select example"
+                                                    value={filter.cxmFieldName || ''}
+                                                    onChange={(e) => handleFieldChange(e, groupIndex, filterIndex)}
+                                                >
+                                                    <option value="" disabled>Select a Field</option>
+                                                    {formData[groupIndex].filterObjectName &&
+                                                        cxmEntityField
+                                                            .find((entity) => entity.entityName === formData[groupIndex].filterObjectName)
+                                                            .entityField.map((field, index) => (
+                                                                <option key={index} value={field.value}>
+                                                                    {field.label}
+                                                                </option>
+                                                            ))}
+                                                </select>
+                                            </div>
+
+                                            {/* Column 2 */}
+                                            <div className='operator-column'>
+                                                <select
+                                                    className="form-select "
+                                                    aria-label="Default select example"
+                                                    onChange={(e) => handleOperatorChange(e, groupIndex, filterIndex)}
+                                                    value={filter.operator}
+                                                    id='operator-select'
+                                                >
+                                                    {operatorOptions.map((option, index) => (
+                                                        <option key={index} value={option.value}>
+                                                            {option.label}
+                                                        </option>
+                                                    ))}
+                                                </select>
+                                            </div>
+
+                                            {/* Column 3 */}
+                                            <div className='crm-column'>
+                                                <select
+                                                    className="form-select"
+                                                    aria-label="Default select example"
+                                                    id='crm-select'
+                                                    value={filter.crmFieldName}
+                                                    onChange={(e) => handleCrmFieldChange(e, groupIndex, filterIndex)}
+                                                >
+                                                    <option value="" disabled>
+                                                        Select a CRM Field
                                                     </option>
-                                                ))}
-                                    </select>
-                                </label>
+                                                    {filter.crmFields.map((field, index) => (
+                                                        <option key={index} value={field.value}>
+                                                            {field.label}
+                                                        </option>
+                                                    ))}
+                                                </select>
+                                            </div>
 
-                                <label htmlFor="name" className="form-label" style={{ marginRight: "18px" }}>
-                                    Operator
-                                    <select
-                                        className="form-select"
-                                        aria-label="Default select example"
-                                        onChange={(e) => handleOperatorChange(e, index)}
-                                        value={filterGroup.filters.operator}
-                                    >
-                                        {operatorOptions.map((option, index) => (
-                                            <option key={index} value={option.value}>
-                                                {option.label}
-                                            </option>
-                                        ))}
-                                    </select>
-                                </label>
+                                            {/* Column 4 */}
+                                            <div className='delete-column'>
+                                                <i
+                                                    className="bi bi-x-circle-fill"
+                                                    id='delete-filter'
+                                                    onClick={() => handleDeleteFilterRow(groupIndex, filterIndex)}
+                                                ></i>
+                                            </div>
+                                        </div>
 
-                                <label htmlFor="name" className="form-label" style={{ marginRight: "18px" }}>
-                                    Comparison Value
-                                    <select
-                                        className="form-select"
-                                        aria-label="Default select example"
-                                        style={{ width: "430px" }}
-                                        value={filterGroup.filters.crmFieldName}
-                                        onChange={(e) => handleCrmFieldChange(e, index)}
-                                    >
-                                        <option value="" disabled>
-                                            Select a CRM Field
-                                        </option>
-                                        {filterGroup.filters.crmFields.map((field, index) => (
-                                            <option key={index} value={field.value}>
-                                                {field.label}
-                                            </option>
-                                        ))}
-                                    </select>
-                                </label>
+                                    </div>
 
-                                <i class="bi bi-x-circle-fill"
-                                    style={{ color: "grey", marginLeft: "22px" }}
-                                ></i>
+                                ))}
 
                             </div>
 
-                            <button className='add-custom-mapping' style={{
-                                color: "blue",
-                                border: "none",
-                                background: "none",
-                                marginTop: "-14px",
-                                marginLeft: "-792px",
-                            }}
-                            // onClick={() => addNewFilter(index)}
+                            <button className='add-custom-mapping' id='add-filter-button'
+                                onClick={() => addNewFilter(groupIndex)}
                             >
                                 <i className="bi bi-plus"></i>
-                                &nbsp;Add Filter
+                                Add Filter
                             </button>
                         </div>
 
                     </div>
+
                 ))}
 
                 <button
                     className='add-custom-mapping'
-                    style={{
-                        color: "blue",
-                        border: "none",
-                        background: "none",
-                        marginTop: "14px",
-                        marginBottom: "-5px"
-                    }}
+                    id='add-filter-group-button'
                     onClick={addFilterGroup}
                 >
                     <i className="bi bi-plus"></i>
-                    &nbsp;Add Filter Group
+                    Add Filter Group
                 </button>
             </div>
+
         }</div>
     );
 }

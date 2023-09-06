@@ -631,3 +631,172 @@ body {
     align-items: center;
     justify-content: space-between
 }
+
+
+
+
+
+
+/* filters screen */
+
+.filter-logo {
+    height: 110px;
+    width: 150px;
+    margin-top: 7%;
+    margin-left: 45%;
+}
+
+.filter-title {
+    margin-top: 1%;
+    margin-left: 45%
+}
+
+#filter-header {
+    font-size: 20px
+}
+
+.filter-text {
+    margin-top: 1%;
+    margin-left: 36%;
+    color: grey
+}
+
+.filter-text .span-tab {
+    margin-left: 6px
+}
+
+.filter-text .span-tab-text {
+    margin-left: 59px
+}
+
+.button-add-filter {
+    margin-top: 2%;
+    margin-left: 13%;
+    width: auto
+}
+
+.filter-screen {
+    margin-left: 20px
+}
+
+#filter-group-card {
+    background-color: #ebf3f9;
+    border-block-color: #4ca8ee;
+    width: 970px;
+    margin-top: 20px;
+}
+
+#filter-group-name {
+    width: 230px;
+    margin-right: 18px
+}
+
+.filter-object-label {
+    margin-right: 18px
+}
+
+#active-checkbox {
+    margin-left: 50px;
+    margin-top: 35px
+}
+
+#active-label {
+    margin-left: 10px
+}
+
+.delete-filter-group {
+    margin-left: 78px;
+    cursor: pointer;
+    font-size: 24px;
+    color: grey
+}
+
+#filter-card {
+    background-color: #f8f6f6;
+    border-block-color: grey;
+    width: 940px;
+    margin-left: 13px;
+    margin-bottom: 20px
+}
+
+.inner-card-title {
+    display: flex;
+    align-items: center
+}
+
+#inner-card-title-text {
+    width: 80px;
+    margin-left: 15px;
+    margin-right: 15px
+}
+
+.select-field-text {
+    margin-left: -9px
+}
+
+.select-operator-text {
+    margin-left: -165px;
+    margin-right: -201px
+}
+
+.select-comparison-text {
+    margin-right: 80px
+}
+
+.custom-filters {
+    display: flex;
+    margin-top: 12px
+}
+
+.field-column {
+    flex: 1;
+    margin-right: -162px
+}
+
+.operator-column {
+    flex: 1;
+    margin-left: 181px
+}
+
+#operator-select {
+    width: 160px
+}
+
+.crm-column {
+    flex: 1;
+    margin-left: -17px;
+    margin-right: -2px
+}
+
+#crm-select {
+    width: 430px
+}
+
+.delete-column {
+    flex: 1;
+    margin-right: -175px;
+    margin-top: 7px
+}
+
+#delete-filter {
+    color: grey;
+    margin-left: 22px;
+    cursor: pointer
+}
+
+#add-filter-button{
+    color: blue;
+    border: none;
+    background: none;
+    margin-top: -5px;
+    margin-left: -792px;
+    margin-bottom: 12px
+}
+
+#add-filter-group-button{
+    color: blue;
+    border: none;
+    background: none;
+    margin-top: 14px;
+    margin-bottom: -5px
+}
