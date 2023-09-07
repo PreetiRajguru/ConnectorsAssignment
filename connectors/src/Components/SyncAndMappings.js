@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const SyncMappings = () => {
+const SyncMappings = ({ syncAndMappings, setSyncAndMappings, syncAndMappingsErrors, setSyncAndMappingsErrors }) => {
 
   const mappingData = [
     {
@@ -261,7 +261,7 @@ const SyncMappings = () => {
       updatedFormData[mappingIndex].mappings[innerIndex].crmFieldName = selectedCrmField.value;
       updatedFormData[mappingIndex].mappings[innerIndex].crmFieldLabel = selectedCrmField.label;
     } else {
-      //when the selectedCrm is not found
+      // when the selectedCrm is not found
       updatedFormData[mappingIndex].mappings[innerIndex].crmFieldName = '';
       updatedFormData[mappingIndex].mappings[innerIndex].crmFieldLabel = '';
     }

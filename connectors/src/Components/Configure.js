@@ -60,6 +60,9 @@ function StepperState() {
     const [connectAccount, setConnectAccount] = useState({});
     const [connectAccountErrors, setConnectAccountErrors] = useState({});
 
+    const [syncAndMappings, setSyncAndMappings] = useState({});
+    const [syncAndMappingsErrors, setSyncAndMappingsErrors] = useState({});
+
     const CurrentStepComponent = steps[current].component;
 
     const isValidURL = (url) => {
@@ -98,6 +101,12 @@ function StepperState() {
             }
         }
 
+        if (current === 3){
+            const errors = {};
+
+
+        }
+
 
         //next step
         setCurrent(Math.min(current + 1, steps.length));
@@ -131,6 +140,10 @@ function StepperState() {
                 setConnectAccount={setConnectAccount}
                 connectAccountErrors={connectAccountErrors}
                 setConnectAccountErrors={setConnectAccountErrors}
+                syncAndMappings={syncAndMappings}
+                setSyncAndMappings={setSyncAndMappings}
+                syncAndMappingsErrors={syncAndMappingsErrors}
+                setSyncAndMappingsErrors={setSyncAndMappingsErrors}
             />
 
             <div>
